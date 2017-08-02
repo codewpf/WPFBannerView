@@ -1,0 +1,15 @@
+PODS:
+  - iCarousel (1.8.3)
+  - Kingfisher (3.10.4)
+
+DEPENDENCIES:
+  - iCarousel
+  - Kingfisher (~> 3.0)
+
+SPEC CHECKSUMS:
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
+
+PODFILE CHECKSUM: 4d4e772cba6152e861e8f7056385c64bc7514e71
+
+COCOAPODS: 1.2.1
