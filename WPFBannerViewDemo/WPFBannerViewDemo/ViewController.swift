@@ -35,23 +35,30 @@ class ViewController: UIViewController, WPFBannerViewDelegate {
             print(bannerView)
             print(index)
         })
+        banner1.isLoop = false
         self.view.addSubview(banner1)
         
-        let banner2 = WPFBannerView.bannerView(frame: CGRect(x: (Constant.screenWidth-320)/2, y: 300, width: 320, height: 134), imageURLS: remoteImageURLS, titles: [], placeholder: nil, delegate: self)
+        let banner2 = WPFBannerView.bannerView(frame: CGRect(x: (Constant.screenWidth-320)/2, y: 300, width: 320, height: 134), imageURLS: remoteImageURLS, titles: ["测试1","测试2"], placeholder: nil, delegate: self)
         banner2.type = .rotary
+        banner2.autoScrollInterval = 3
         self.view.addSubview(banner2)
 
         let banner3 = WPFBannerView.bannerView(frame: CGRect(x: (Constant.screenWidth-320)/2, y: 500, width: 320, height: 180), imageURLS: localImageURLS, titles: [], placeholder: nil, didSelect: { (bannerView, index) in
             print("didSelect Block")
             print(bannerView)
             print(index)
-        }, didScroll: {  (bannerView, index) in
+        }) { (bannerView, index) in
             print("didScroll Block")
             print(bannerView)
             print(index)
-        })
+        }
+        banner3.isVertical = true
+        banner3.type = .cylinder
+        banner3.clipsToBounds = false
+        banner3.autoScrollInterval = 4
         self.view.addSubview(banner3)
     
+        
     }
     
     func bannerView(_ bannerView: WPFBannerView, didSelectItemAt index: Int) {

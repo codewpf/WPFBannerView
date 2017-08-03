@@ -9,35 +9,95 @@
 import UIKit
 import Kingfisher
 
-class WPFBannerView: UIView, iCarouselDataSource, iCarouselDelegate {
+// MARK: - Property & Init
+class WPFBannerView: UIView {
     
-    //MARK: - Property -
+    ////////// base //////////
     /// bannerView
-    private let banner: iCarousel
+    fileprivate let banner: iCarousel
     /// ImageViews
-    private var imageViews: [UIImageView] = []
+    fileprivate var imageViews: [UIImageView] = []
     /// TitleLabels
-    private var titleLabels: [UILabel] = []
+    fileprivate var titleLabels: [UILabel] = []
+    /// 计时器
+    fileprivate var timer: WPFTimer? = nil
     
-    
-    ////////// 回调 //////////
+    ////////// Callback //////////
     /// 代理
-    private var delegate: WPFBannerViewDelegate? = nil
+    fileprivate var delegate: WPFBannerViewDelegate? = nil
     ////////// Block //////////
     /// 点击Block
-    private var didSelectItem: WPFBannerViewBlock? = nil
+    fileprivate var didSelectItem: WPFBannerViewBlock? = nil
     /// 滚动Block
-    private var didScrollItem: WPFBannerViewBlock? = nil
+    fileprivate var didScrollItem: WPFBannerViewBlock? = nil
     
-    ////////// 数据源 //////////
+    ////////// DataSources //////////
     /// 占位图
-    private var placeholder: UIImage? = nil
+    fileprivate var placeholder: UIImage? = nil
     /// 图片地址
-    private var imageURLs: [String] = []
+    fileprivate var imageURLs: [String] = []
     /// 标题地址
-    private var titles: [String] = []
+    fileprivate var titles: [String] = []
     /// 是否只显示文字，默认false
-    private var pISOnlyText: Bool = false
+    fileprivate var pISOnlyText: Bool = false
+    
+    ////////// Calculate //////////
+    /// 内容模式，默认scaleToFill
+    fileprivate var pContentMode: UIViewContentMode = .scaleToFill
+    /// 是否无限循环，默认ture
+    fileprivate var pISLoop: Bool = true
+
+    
+    
+    
+    ////////// Setting //////////
+    /// 自动滚动时间，默认2秒
+    var pAutoScrollInterval: Int = 2
+    /// 是否自动滚动，默认true
+    var pISAutoScroll: Bool = true
+    
+
+    ////////// PageControl //////////
+    /// 是否显示分页控件，默认true
+    var isShowPageControl: Bool = true
+    /// 是否单页隐藏PageControl，默认false
+    var isHidePageControlWhenSingle: Bool = false
+    /// pageControl 对齐方式
+    var pageControlAlignment: WPFBannerAlignment = .center
+    
+    ////////// Label //////////
+
+    
+    
+    
+    
+    fileprivate override init(frame: CGRect) {
+        banner = iCarousel(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        super.init(frame: frame)
+        
+        /// static
+        self.banner.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        self.banner.bounceDistance = 0.2
+        self.banner.isPagingEnabled = true
+        self.banner.dataSource = self
+        self.banner.delegate = self
+        
+        /// calculate
+        self.banner.type = .linear
+        self.banner.isVertical = false
+        self.banner.clipsToBounds = true
+
+        self.initTimer()
+        
+        self.addSubview(self.banner)
+    }
+    required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
+}
+
+
+// MARK: - Calaulate Properties
+extension WPFBannerView {
+    /// 是否只显示文字，默认false
     var isOnlyText: Bool {
         get {
             return self.pISOnlyText
@@ -48,14 +108,7 @@ class WPFBannerView: UIView, iCarouselDataSource, iCarouselDelegate {
         }
     }
     
-    ////////// 设置 //////////
-    /// 自动滚动时间，默认2秒
-    var autoScrollInterval: DispatchTimeInterval = .seconds(2)
-    /// 是否自动滚动，默认true
-    var isAutoScroll: Bool = true
-    
     /// 内容模式，默认scaleToFill
-    private var pContentMode: UIViewContentMode = .scaleToFill
     var contentModel: UIViewContentMode {
         get {
             return self.pContentMode
@@ -67,20 +120,19 @@ class WPFBannerView: UIView, iCarouselDataSource, iCarouselDelegate {
             }
         }
     }
+
+    var autoScrollInterval: Int {
+        get {
+            return self.pAutoScrollInterval
+        }
+        set {
+            self.pAutoScrollInterval = newValue
+            self.initTimer()
+        }
+    }
+
     
-    ////////// PageControl //////////
-    /// 是否显示分页控件，默认true
-    var isShowPageControl: Bool = true
-    /// 是否单页隐藏PageControl，默认false
-    var isHidePageControlWhenSingle: Bool = false
-    /// pageControl 对齐方式
-    var pageControlAlignment: WPFBannerAlignment = .center
     
-    
-    
-    
-    
-    //MARK: - Banner Calculate Property -
     /// banner类型，默认.linear
     var type: WPFBannerType {
         get {
@@ -125,7 +177,6 @@ class WPFBannerView: UIView, iCarouselDataSource, iCarouselDelegate {
         }
     }
     /// 是否无限循环，默认ture
-    private var pISLoop: Bool = true
     var isLoop: Bool {
         get {
             return self.pISLoop
@@ -135,57 +186,42 @@ class WPFBannerView: UIView, iCarouselDataSource, iCarouselDelegate {
             self.banner.reloadData()
         }
     }
-    
-    
-    
-    
-    //MARK: - Static Methods -
+
+}
+
+// MARK: - Static Init
+extension WPFBannerView {
     static func bannerView(frame: CGRect, imageURLS: [String], titles: [String]?, placeholder: UIImage?, delegate: WPFBannerViewDelegate) -> WPFBannerView {
         let bannerView = WPFBannerView(frame: frame)
         bannerView.staticInit(imageURLS: imageURLS, titles: titles, placeholder: placeholder)
         bannerView.delegate = delegate
         return bannerView
     }
-    static func bannerView(frame: CGRect, imageURLS: [String], titles: [String]?, placeholder: UIImage?, didSelect select: @escaping WPFBannerViewBlock, didScroll scroll: @escaping WPFBannerViewBlock) -> WPFBannerView {
+    static func bannerView(frame: CGRect, imageURLS: [String], titles: [String]?, placeholder: UIImage?, didSelect select: WPFBannerViewBlock?, didScroll scroll: WPFBannerViewBlock? = nil) -> WPFBannerView {
         let bannerView = WPFBannerView(frame: frame)
         bannerView.staticInit(imageURLS: imageURLS, titles: titles, placeholder: placeholder)
-        bannerView.didScrollItem = select
+        bannerView.didSelectItem = select
         bannerView.didScrollItem = scroll
         return bannerView
     }
     
-    private func staticInit(imageURLS: [String], titles: [String]?, placeholder: UIImage?) {
+    fileprivate func staticInit(imageURLS: [String], titles: [String]?, placeholder: UIImage?) {
         self.imageURLs = imageURLS
         self.placeholder = placeholder
         self.initImageViews()
         if titles != nil {
             self.titles = titles!
             self.pageControlAlignment = .right
+            self.initTitleLabes()
         }
         self.banner.reloadData()
     }
-    
-    //MARK: - Private Methods -
-    private override init(frame: CGRect) {
-        banner = iCarousel(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
-        super.init(frame: frame)
-        
-        /// static
-        banner.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        banner.bounceDistance = 0.2
-        banner.isPagingEnabled = true
-        banner.dataSource = self
-        banner.delegate = self
-        
-        /// calculate
-        banner.type = .linear
-        banner.isVertical = false
-        banner.clipsToBounds = true
-        
-        self.addSubview(banner)
-    }
-    
-    private func initImageViews() {
+
+}
+
+// MARK: - Private Methods
+extension WPFBannerView {
+    fileprivate func initImageViews() {
         for urlStr in self.imageURLs {
             var url: URL? = nil
             if urlStr.hasPrefix("http") {
@@ -200,13 +236,13 @@ class WPFBannerView: UIView, iCarouselDataSource, iCarouselDelegate {
         }
     }
     
-    private func initTitleLabes() {
+    fileprivate func initTitleLabes() {
         for title in self.titles {
             let label: UILabel = UILabel()
             label.frame = CGRect(x: 0, y: self.banner.frame.height-Project.titleLabelHeight, width: self.banner.frame.width, height: Project.titleLabelHeight)
-            label.text = title
-            label.font = UIFont.systemFont(ofSize: 17)
-            label.backgroundColor = UIColor.clear
+            label.text = "  \(title)"
+            label.font = UIFont.systemFont(ofSize: 13)
+            label.backgroundColor = UIColor(white: 0.3, alpha: 0.5)
             label.textColor = UIColor.white
             label.textAlignment = .left
             
@@ -214,8 +250,35 @@ class WPFBannerView: UIView, iCarouselDataSource, iCarouselDelegate {
         }
     }
     
+    fileprivate func initTimer() {
+        self.timer?.cancel()
+        self.timer = nil
+        self.timer = WPFTimer(interval: .seconds(self.pAutoScrollInterval), repeats: true, queue: .main, handler: { (timer) in
+            self.timerAction()
+        })
+        self.timer?.start()
+    }
     
-    //MARK: - ICarousel Delegate&DataSource -
+    fileprivate func timerAction() {
+        var index: Int = self.banner.currentItemIndex + 1
+        if pISOnlyText {
+            if index == self.titleLabels.count {
+                index = 0
+            }
+        } else {
+            if index == self.imageViews.count {
+                index = 0
+            }
+        }
+        self.banner.scrollToItem(at: index, animated: true)
+    }
+    
+    
+}
+
+
+// MARK: - Delegate
+extension WPFBannerView: iCarouselDataSource, iCarouselDelegate {
     func numberOfItems(in carousel: iCarousel) -> Int {
         if self.pISOnlyText {
             return self.titles.count
@@ -268,24 +331,5 @@ class WPFBannerView: UIView, iCarouselDataSource, iCarouselDelegate {
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
 }
+
