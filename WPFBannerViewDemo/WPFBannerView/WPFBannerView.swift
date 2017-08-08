@@ -15,6 +15,8 @@ class WPFBannerView: UIView {
     ////////// base //////////
     /// bannerView
     fileprivate let banner: iCarousel
+    /// PageControl
+    fileprivate var pageControl: UIPageControl
     /// ImageViews
     fileprivate var imageViews: [UIImageView] = []
     /// TitleLabels
@@ -41,38 +43,44 @@ class WPFBannerView: UIView {
     /// 是否只显示文字，默认false
     fileprivate var pISOnlyText: Bool = false
     
-    ////////// Calculate //////////
+    ////////// Setting //////////
     /// 内容模式，默认scaleToFill
     fileprivate var pContentMode: UIViewContentMode = .scaleToFill
     /// 是否无限循环，默认ture
     fileprivate var pISLoop: Bool = true
-
     
-    
-    
-    ////////// Setting //////////
+    ////////// Timer //////////
     /// 自动滚动时间，默认2秒
-    var pAutoScrollInterval: Int = 2
+    fileprivate var pAutoScrollInterval: Int = 2
     /// 是否自动滚动，默认true
-    var pISAutoScroll: Bool = true
+    fileprivate var pISAutoScroll: Bool = true
     
 
     ////////// PageControl //////////
     /// 是否显示分页控件，默认true
-    var isShowPageControl: Bool = true
+    fileprivate var pISShowPageControl: Bool = true
     /// 是否单页隐藏PageControl，默认false
-    var isHidePageControlWhenSingle: Bool = false
+    fileprivate var pISHidePageControlWhenSingle: Bool = false
     /// pageControl 对齐方式
-    var pageControlAlignment: WPFBannerAlignment = .center
+    fileprivate var pPageControlAlignment: WPFBannerAlignment = .center
     
     ////////// Label //////////
-
-    
+    /// label 字体
+    fileprivate var pLabelFont: UIFont = Project.labelFont
+    /// label 字体颜色
+    fileprivate var pLabelTextColor: UIColor = Project.labelTextColor
+    /// label 背景颜色
+    fileprivate var pLabelBackgroundColor: UIColor = Project.labelBackgroundColor
+    /// label 高度
+    fileprivate var pLabelHeight: CGFloat = Project.labelHeight
+    /// label 对齐方式
+    fileprivate var pLabelTextAlignment: NSTextAlignment = Project.labelTextAlignment
     
     
     
     fileprivate override init(frame: CGRect) {
         banner = iCarousel(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        pageControl = UIPageControl()
         super.init(frame: frame)
         
         /// static
@@ -121,6 +129,7 @@ extension WPFBannerView {
         }
     }
 
+    /// 自动滚动时间
     var autoScrollInterval: Int {
         get {
             return self.pAutoScrollInterval
@@ -186,6 +195,89 @@ extension WPFBannerView {
             self.banner.reloadData()
         }
     }
+    
+    ////////// PageControl //////////
+    /// 是否显示分页控件，默认true
+    var isShowPageControl: Bool {
+        get {
+                return self.pISShowPageControl
+        }
+        set {
+            self.pISShowPageControl = newValue
+        }
+    }
+    /// 是否单页隐藏PageControl，默认false
+    var isHidePageControlWhenSingle: Bool {
+        get {
+            return self.pISHidePageControlWhenSingle
+        }
+        set {
+            self.pISHidePageControlWhenSingle = true
+        }
+    }
+    /// pageControl 对齐方式
+    var pageControlAlignment: WPFBannerAlignment {
+        get {
+            return self.pPageControlAlignment
+        }
+        set {
+            self.pPageControlAlignment = newValue
+        }
+    }
+
+    
+    ////////// Label //////////
+    /// label 字体
+    var labelTextFont: UIFont {
+        get {
+            return self.pLabelFont
+        }
+        set {
+            self.pLabelFont = newValue
+            self.resetLabel()
+        }
+    }
+    /// label 字体颜色
+    var labelTextColor: UIColor {
+        get {
+            return self.pLabelTextColor
+        }
+        set {
+            self.pLabelTextColor = newValue
+            self.resetLabel()
+        }
+    }
+    /// label 背景颜色
+    var labelBackgroundColor: UIColor {
+        get {
+            return self.pLabelBackgroundColor
+        }
+        set {
+            self.pLabelBackgroundColor = newValue
+            self.resetLabel()
+        }
+    }
+    /// label 高度
+    var labelHeight: CGFloat {
+        get {
+            return self.pLabelHeight
+        }
+        set {
+            self.pLabelHeight = newValue
+            self.resetLabel()
+        }
+    }
+    /// label 对齐方式
+    var labelTextAlignment: NSTextAlignment {
+        get {
+            return self.pLabelTextAlignment
+        }
+        set {
+            self.pLabelTextAlignment = newValue
+            self.resetLabel()
+        }
+    }
+    
 
 }
 
@@ -239,13 +331,12 @@ extension WPFBannerView {
     fileprivate func initTitleLabes() {
         for title in self.titles {
             let label: UILabel = UILabel()
-            label.frame = CGRect(x: 0, y: self.banner.frame.height-Project.titleLabelHeight, width: self.banner.frame.width, height: Project.titleLabelHeight)
+            label.frame = CGRect(x: 0, y: self.banner.frame.height-self.pLabelHeight, width: self.banner.frame.width, height: self.pLabelHeight)
             label.text = "  \(title)"
-            label.font = UIFont.systemFont(ofSize: 13)
-            label.backgroundColor = UIColor(white: 0.3, alpha: 0.5)
-            label.textColor = UIColor.white
-            label.textAlignment = .left
-            
+            label.font = self.pLabelFont
+            label.backgroundColor = self.pLabelBackgroundColor
+            label.textColor = self.pLabelTextColor
+            label.textAlignment = self.pLabelTextAlignment
             self.titleLabels.append(label)
         }
     }
@@ -273,6 +364,18 @@ extension WPFBannerView {
         self.banner.scrollToItem(at: index, animated: true)
     }
     
+    fileprivate func resetLabel() {
+        for label in self.titleLabels {
+            var frame = label.frame
+            frame.origin.y = self.banner.frame.height - self.pLabelHeight
+            frame.size.height = self.pLabelHeight
+            label.frame = frame
+            label.font = self.pLabelFont
+            label.backgroundColor = self.pLabelBackgroundColor
+            label.textColor = self.pLabelTextColor
+            label.textAlignment = self.pLabelTextAlignment
+        }
+    }
     
 }
 

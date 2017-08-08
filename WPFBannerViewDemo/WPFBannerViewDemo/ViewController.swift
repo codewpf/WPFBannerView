@@ -35,12 +35,16 @@ class ViewController: UIViewController, WPFBannerViewDelegate {
             print(bannerView)
             print(index)
         })
-        banner1.isLoop = false
         self.view.addSubview(banner1)
         
         let banner2 = WPFBannerView.bannerView(frame: CGRect(x: (Constant.screenWidth-320)/2, y: 300, width: 320, height: 134), imageURLS: remoteImageURLS, titles: ["测试1","测试2"], placeholder: nil, delegate: self)
         banner2.type = .rotary
         banner2.autoScrollInterval = 3
+        banner2.labelTextColor = UIColor.green
+        banner2.labelTextFont = UIFont.boldSystemFont(ofSize: 25)
+        banner2.labelTextAlignment = .right
+        banner2.labelHeight = 40
+        banner2.labelBackgroundColor = UIColor.blue
         self.view.addSubview(banner2)
 
         let banner3 = WPFBannerView.bannerView(frame: CGRect(x: (Constant.screenWidth-320)/2, y: 500, width: 320, height: 180), imageURLS: localImageURLS, titles: [], placeholder: nil, didSelect: { (bannerView, index) in

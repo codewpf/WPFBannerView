@@ -16,7 +16,13 @@ struct Constant {
 }
 
 struct Project  {
-    static let titleLabelHeight: CGFloat = 21
+    
+    static let labelFont: UIFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+    static let labelTextColor: UIColor = UIColor.white
+    static let labelBackgroundColor: UIColor = UIColor(white: 0.3, alpha: 0.5)
+    static let labelHeight: CGFloat = 21
+    static let labelTextAlignment: NSTextAlignment = .left
+    
 }
 
 
