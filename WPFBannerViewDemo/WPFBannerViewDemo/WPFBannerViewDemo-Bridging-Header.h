@@ -10,5 +10,6 @@
 #define WPFBannerViewDemo_Bridging_Header_h
 
 #import "iCarousel.h"
+#import "TAPageControl.h"
 
 #endif /* WPFBannerViewDemo_Bridging_Header_h */

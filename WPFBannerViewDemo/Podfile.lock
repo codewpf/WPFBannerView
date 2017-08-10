@@ -1,15 +1,18 @@
 PODS:
   - iCarousel (1.8.3)
   - Kingfisher (3.10.4)
+  - TAPageControl (0.2.0)
 
 DEPENDENCIES:
   - iCarousel
   - Kingfisher (~> 3.0)
+  - TAPageControl
 
 SPEC CHECKSUMS:
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
+  TAPageControl: fd11d779bbb5c2464ca2f55dde9e288213ea8a9b
 
-PODFILE CHECKSUM: 4d4e772cba6152e861e8f7056385c64bc7514e71
+PODFILE CHECKSUM: 3b2ae41d7a6c80c8307fec13e8a227f64b01dea3
 
 COCOAPODS: 1.2.1

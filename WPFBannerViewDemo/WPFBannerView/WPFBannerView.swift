@@ -16,13 +16,14 @@ class WPFBannerView: UIView {
     /// bannerView
     fileprivate let banner: iCarousel
     /// PageControl
-    fileprivate var pageControl: UIPageControl
+    fileprivate var pageControl: UIControl? = nil
     /// ImageViews
     fileprivate var imageViews: [UIImageView] = []
     /// TitleLabels
     fileprivate var titleLabels: [UILabel] = []
     /// 计时器
     fileprivate var timer: WPFTimer? = nil
+    
     
     ////////// Callback //////////
     /// 代理
@@ -33,21 +34,24 @@ class WPFBannerView: UIView {
     /// 滚动Block
     fileprivate var didScrollItem: WPFBannerViewBlock? = nil
     
+    
     ////////// DataSources //////////
     /// 占位图
-    fileprivate var placeholder: UIImage? = nil
+    fileprivate var pPlaceholder: UIImage? = nil
     /// 图片地址
-    fileprivate var imageURLs: [String] = []
+    fileprivate var pImageURLs: [String] = []
     /// 标题地址
-    fileprivate var titles: [String] = []
+    fileprivate var pTitles: [String] = []
     /// 是否只显示文字，默认false
     fileprivate var pISOnlyText: Bool = false
+    
     
     ////////// Setting //////////
     /// 内容模式，默认scaleToFill
     fileprivate var pContentMode: UIViewContentMode = .scaleToFill
     /// 是否无限循环，默认ture
     fileprivate var pISLoop: Bool = true
+    
     
     ////////// Timer //////////
     /// 自动滚动时间，默认2秒
@@ -58,11 +62,28 @@ class WPFBannerView: UIView {
 
     ////////// PageControl //////////
     /// 是否显示分页控件，默认true
-    fileprivate var pISShowPageControl: Bool = true
+    fileprivate var pPageControlISShow: Bool = true
     /// 是否单页隐藏PageControl，默认false
-    fileprivate var pISHidePageControlWhenSingle: Bool = false
+    fileprivate var pPageControlISHideWhenSingle: Bool = false
+    /// pageControl 样式
+    fileprivate var pPageControlStyle: WPFPageControlStyle = .system
     /// pageControl 对齐方式
     fileprivate var pPageControlAlignment: WPFBannerAlignment = .center
+    /// pageControl tap style dot size, this will automatic set style to tap
+    fileprivate var pPageControlDotSize: CGSize = Project.pageControlDotSize
+    /// pageControl tap style dot image, this will automatic set style to tap
+    fileprivate var pPageControlDotImage: UIImage? = nil
+    /// pageControl tap style current dot image, this will automatic set style to tap
+    fileprivate var pPageControlCurrentDotImage: UIImage? = nil
+    /// pageControl system style dot color, this will automatic set style to system
+    fileprivate var pPageControlDotColor: UIColor = Project.pageControlDotColor
+    /// pageControl system style current dot color, this will automatic set style to system
+    fileprivate var pPageControlCurrentDotColor: UIColor = Project.pageControlCurrentDotColor
+    /// pageControl 距离底部的距离
+    fileprivate var pPageControlBottomOffset: CGFloat = Project.pageControlBottomOffset
+    /// pageControl 距离左边的距离
+    fileprivate var pPageControlLeftOffset: CGFloat = Project.pageControlLeftOffset
+    
     
     ////////// Label //////////
     /// label 字体
@@ -80,24 +101,9 @@ class WPFBannerView: UIView {
     
     fileprivate override init(frame: CGRect) {
         banner = iCarousel(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
-        pageControl = UIPageControl()
         super.init(frame: frame)
         
-        /// static
-        self.banner.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        self.banner.bounceDistance = 0.2
-        self.banner.isPagingEnabled = true
-        self.banner.dataSource = self
-        self.banner.delegate = self
-        
-        /// calculate
-        self.banner.type = .linear
-        self.banner.isVertical = false
-        self.banner.clipsToBounds = true
-
-        self.initTimer()
-        
-        self.addSubview(self.banner)
+        self.pInit()
     }
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
 }
@@ -105,6 +111,8 @@ class WPFBannerView: UIView {
 
 // MARK: - Calaulate Properties
 extension WPFBannerView {
+    
+    
     /// 是否只显示文字，默认false
     var isOnlyText: Bool {
         get {
@@ -113,6 +121,8 @@ extension WPFBannerView {
         set {
             pISOnlyText = newValue
             self.banner.reloadData()
+            self.initPageControl()
+            self.resetLabel()
         }
     }
     
@@ -139,8 +149,6 @@ extension WPFBannerView {
             self.initTimer()
         }
     }
-
-    
     
     /// banner类型，默认.linear
     var type: WPFBannerType {
@@ -198,21 +206,33 @@ extension WPFBannerView {
     
     ////////// PageControl //////////
     /// 是否显示分页控件，默认true
-    var isShowPageControl: Bool {
+    var pageControlISShow: Bool {
         get {
-                return self.pISShowPageControl
+                return self.pPageControlISShow
         }
         set {
-            self.pISShowPageControl = newValue
+            self.pPageControlISShow = newValue
+            self.initPageControl()
         }
     }
     /// 是否单页隐藏PageControl，默认false
-    var isHidePageControlWhenSingle: Bool {
+    var pageControlISHideWhenSingle: Bool {
         get {
-            return self.pISHidePageControlWhenSingle
+            return self.pPageControlISHideWhenSingle
         }
         set {
-            self.pISHidePageControlWhenSingle = true
+            self.pPageControlISHideWhenSingle = true
+            self.initPageControl()
+        }
+    }
+    /// pageControl 样式
+    var pageControlStyle: WPFPageControlStyle {
+        get {
+            return self.pPageControlStyle
+        }
+        set {
+            self.pPageControlStyle = newValue
+            self.initPageControl()
         }
     }
     /// pageControl 对齐方式
@@ -222,8 +242,85 @@ extension WPFBannerView {
         }
         set {
             self.pPageControlAlignment = newValue
+            self.resetPageControl()
         }
     }
+    /// pageControl tap style dot size, this will automatic set style to tap
+    var pageControlDotSize: CGSize {
+        get {
+            return self.pPageControlDotSize
+        }
+        set {
+            self.pPageControlDotSize = newValue
+            self.pPageControlStyle = .tap
+            self.initPageControl()
+        }
+    }
+    /// pageControl tap style dot image, this will automatic set style to tap
+    var pageControlDotImage: UIImage? {
+        get {
+            return self.pPageControlDotImage
+        }
+        set {
+            self.pPageControlDotImage = newValue
+            self.pPageControlStyle = .tap
+            self.initPageControl()
+        }
+    }
+    /// pageControl tap style current dot image, this will automatic set style to tap
+    var pageControlCurrentImage: UIImage? {
+        get {
+            return self.pPageControlDotImage
+        }
+        set {
+            self.pPageControlCurrentDotImage = newValue
+            self.pPageControlStyle = .tap
+            self.initPageControl()
+        }
+    }
+    /// pageControl system style dot color, this will automatic set style to system
+    var pageControlDotColor: UIColor {
+        get {
+            return self.pPageControlDotColor
+        }
+        set {
+            self.pPageControlDotColor = newValue
+            self.pPageControlStyle = .system
+            self.initPageControl()
+        }
+    }
+    /// pageControl system style current dot color, this will automatic set style to system
+    var pageControlDotCurrentColor: UIColor {
+        get {
+            return self.pPageControlCurrentDotColor
+        }
+        set {
+            self.pPageControlCurrentDotColor = newValue
+            self.pPageControlStyle = .system
+            self.initPageControl()
+        }
+    }
+    /// pageControl 距离底部的距离
+    var pageControlBottomOffset: CGFloat {
+        get {
+            return self.pPageControlBottomOffset
+        }
+        set {
+            self.pPageControlBottomOffset = newValue
+            self.resetPageControl()
+        }
+    }
+    /// pageControl 距离左边的距离
+    var pageControlLeftOffset: CGFloat {
+        get {
+            return self.pPageControlLeftOffset
+        }
+        set {
+            self.pPageControlLeftOffset = newValue
+            self.resetPageControl()
+        }
+    }
+
 
     
     ////////// Label //////////
@@ -281,8 +378,25 @@ extension WPFBannerView {
 
 }
 
-// MARK: - Static Init
+// MARK: - Init
 extension WPFBannerView {
+    fileprivate func pInit() {
+        ///// Banner /////
+        /// static
+        self.banner.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        self.banner.bounceDistance = 0.2
+        self.banner.isPagingEnabled = true
+        self.banner.dataSource = self
+        self.banner.delegate = self
+        /// calculate
+        self.banner.type = .linear
+        self.banner.isVertical = false
+        self.banner.clipsToBounds = true
+        self.addSubview(self.banner)
+        
+        self.initTimer()
+    }
+    
     static func bannerView(frame: CGRect, imageURLS: [String], titles: [String]?, placeholder: UIImage?, delegate: WPFBannerViewDelegate) -> WPFBannerView {
         let bannerView = WPFBannerView(frame: frame)
         bannerView.staticInit(imageURLS: imageURLS, titles: titles, placeholder: placeholder)
@@ -298,23 +412,23 @@ extension WPFBannerView {
     }
     
     fileprivate func staticInit(imageURLS: [String], titles: [String]?, placeholder: UIImage?) {
-        self.imageURLs = imageURLS
-        self.placeholder = placeholder
+        self.pImageURLs = imageURLS
+        self.pPlaceholder = placeholder
         self.initImageViews()
         if titles != nil {
-            self.titles = titles!
-            self.pageControlAlignment = .right
+            self.pTitles = titles!
             self.initTitleLabes()
         }
         self.banner.reloadData()
+        self.initPageControl()
     }
 
 }
 
-// MARK: - Private Methods
+// MARK: - Extra Methods
 extension WPFBannerView {
     fileprivate func initImageViews() {
-        for urlStr in self.imageURLs {
+        for urlStr in self.pImageURLs {
             var url: URL? = nil
             if urlStr.hasPrefix("http") {
                 url = URL(string: urlStr)
@@ -323,13 +437,13 @@ extension WPFBannerView {
             }
             let imageView: UIImageView = UIImageView()
             imageView.frame = CGRect(x: 0, y: 0, width: self.banner.frame.width, height: self.banner.frame.height)
-            imageView.kf.setImage(with: url, placeholder: self.placeholder, options: nil)
+            imageView.kf.setImage(with: url, placeholder: self.pPlaceholder, options: nil)
             self.imageViews.append(imageView)
         }
     }
     
     fileprivate func initTitleLabes() {
-        for title in self.titles {
+        for title in self.pTitles {
             let label: UILabel = UILabel()
             label.frame = CGRect(x: 0, y: self.banner.frame.height-self.pLabelHeight, width: self.banner.frame.width, height: self.pLabelHeight)
             label.text = "  \(title)"
@@ -340,7 +454,115 @@ extension WPFBannerView {
             self.titleLabels.append(label)
         }
     }
+    fileprivate func resetLabel() {
+        for label in self.titleLabels {
+            if self.pISOnlyText == true {
+                label.frame = self.bounds
+            } else {
+                var frame = label.frame
+                frame.origin.y = self.banner.frame.height - self.pLabelHeight
+                frame.size.height = self.pLabelHeight
+                label.frame = frame
+            }
+            
+            label.font = self.pLabelFont
+            label.backgroundColor = self.pLabelBackgroundColor
+            label.textColor = self.pLabelTextColor
+            label.textAlignment = self.pLabelTextAlignment
+        }
+    }
+
     
+    fileprivate func initPageControl() {
+        if self.pageControl != nil {
+            self.pageControl!.removeFromSuperview()
+            self.pageControl = nil
+        }
+        if self.pPageControlISShow == false {
+            return
+        }
+        if self.pImageURLs.count == 0 || self.pISOnlyText == true {
+            return
+        }
+        if self.pImageURLs.count == 1 && self.pPageControlISHideWhenSingle == true {
+            return
+        }
+        
+        /// 当前banner索引
+        let index = self.banner.currentItemIndex
+        var count = 0
+        if self.pISOnlyText == false {
+            count = self.pImageURLs.count
+        } else {
+            count = self.titleLabels.count
+        }
+        switch self.pPageControlStyle {
+        case .system:
+            let pageControl: UIPageControl = UIPageControl()
+            pageControl.numberOfPages = count
+            pageControl.currentPageIndicatorTintColor = self.pPageControlCurrentDotColor
+            pageControl.pageIndicatorTintColor = self.pPageControlDotColor
+            pageControl.isUserInteractionEnabled = false
+            pageControl.currentPage = index
+            let size: CGSize = pageControl.size(forNumberOfPages: count)
+            self.pageControl = pageControl
+            self.setPageControlFrame(CGSize(width: size.width, height: 21))
+            self.addSubview(self.pageControl!)
+        case .tap:
+            let pageControl = TAPageControl()
+            pageControl.numberOfPages = count
+            pageControl.dotSize = self.pPageControlDotSize
+            if let image = self.pPageControlDotImage {
+                pageControl.dotImage = image
+            }
+            if let currentDotImage = self.pPageControlCurrentDotImage {
+                pageControl.currentDotImage = currentDotImage
+            }
+            pageControl.isUserInteractionEnabled = false
+            pageControl.currentPage = index
+            let size: CGSize = pageControl.sizeForNumber(ofPages: count)
+            self.pageControl = pageControl
+            self.setPageControlFrame(size)
+            self.addSubview(self.pageControl!)
+            pageControl.sizeToFit()
+        }
+    }
+    
+    fileprivate func setPageControlFrame(_ size: CGSize) {
+        var x = self.pPageControlLeftOffset
+        let y = self.frame.size.height - size.height - pPageControlBottomOffset
+        switch self.pPageControlAlignment {
+        case .left:
+            x = 10
+        case .center:
+            x = (self.frame.size.width - size.width) / 2
+        case .right:
+            x = self.frame.size.width - size.width - 10
+        }
+        let frame = CGRect(x: x, y: y, width: size.width, height: size.height)
+        self.pageControl!.frame = frame
+    }
+    
+    /// 重设 PageControle 个别属性
+    fileprivate func resetPageControl() {
+        guard self.pageControl != nil else {
+            return
+        }
+        
+        self.setPageControlFrame(self.pageControl!.frame.size)
+        if self.pPageControlBottomOffset != 0 {
+            var frame = self.pageControl!.frame
+            frame.origin.y = frame.origin.y - self.pPageControlBottomOffset
+            self.pageControl!.frame = frame
+        }
+        if self.pPageControlLeftOffset != 0 {
+            var frame = self.pageControl!.frame
+            frame.origin.x = frame.origin.x + self.pPageControlLeftOffset
+            self.pageControl!.frame = frame
+        }
+    }
+    
+    /// 初始化计时器
     fileprivate func initTimer() {
         self.timer?.cancel()
         self.timer = nil
@@ -350,6 +572,7 @@ extension WPFBannerView {
         self.timer?.start()
     }
     
+    /// 计时器方法
     fileprivate func timerAction() {
         var index: Int = self.banner.currentItemIndex + 1
         if pISOnlyText {
@@ -364,18 +587,6 @@ extension WPFBannerView {
         self.banner.scrollToItem(at: index, animated: true)
     }
     
-    fileprivate func resetLabel() {
-        for label in self.titleLabels {
-            var frame = label.frame
-            frame.origin.y = self.banner.frame.height - self.pLabelHeight
-            frame.size.height = self.pLabelHeight
-            label.frame = frame
-            label.font = self.pLabelFont
-            label.backgroundColor = self.pLabelBackgroundColor
-            label.textColor = self.pLabelTextColor
-            label.textAlignment = self.pLabelTextAlignment
-        }
-    }
     
 }
 
@@ -384,7 +595,7 @@ extension WPFBannerView {
 extension WPFBannerView: iCarouselDataSource, iCarouselDelegate {
     func numberOfItems(in carousel: iCarousel) -> Int {
         if self.pISOnlyText {
-            return self.titles.count
+            return self.pTitles.count
         } else {
             return self.imageViews.count
         }
@@ -426,6 +637,16 @@ extension WPFBannerView: iCarouselDataSource, iCarouselDelegate {
     }
     
     func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
+        if self.pageControl != nil {
+            switch self.pPageControlStyle {
+            case .system:
+                let pageControl: UIPageControl = self.pageControl as! UIPageControl
+                pageControl.currentPage = carousel.currentItemIndex
+            case .tap:
+                let pageControl: TAPageControl = self.pageControl as! TAPageControl
+                pageControl.currentPage = carousel.currentItemIndex
+            }
+        }
         if self.delegate != nil {
             self.delegate!.bannerView!(self, didScrollItemTo: carousel.currentItemIndex)
         }
