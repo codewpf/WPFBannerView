@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WPFBannerView"
-  s.version      = "0.1.1"
+  s.version      = "0.2.0"
   s.summary      = "A convenient way to init BannerView"
 
   # This description is used to generate tags and improve search results.
@@ -134,7 +134,5 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency "Kingfisher", "~> 3.0"
-  s.dependency "iCarousel"
-  s.dependency "TAPageControl"
 
 end
