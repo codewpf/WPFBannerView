@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WPFBannerView"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "A convenient way to init BannerView"
 
   # This description is used to generate tags and improve search results.
@@ -90,6 +90,7 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "WPFBannerViewDemo/WPFBannerView/*.{swift}"
+  s.source_files  = "WPFBannerViewDemo/WPFBannerView/**/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
