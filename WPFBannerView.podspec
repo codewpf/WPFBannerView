@@ -23,7 +23,9 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/codewpf/WPFBannerView.git", :tag => "#{s.version}" }
 
 
-  s.source_files = ["WPFBannerViewDemo/WPFBannerView/*.swift", "WPFBannerViewDemo/WPFBannerView/WPFBannerView.swift", "WPFBannerViewDemo/WPFBannerView/**/*.{h,m}"]
+  s.source_files = ["WPFBannerViewDemo/WPFBannerView/Kingfisher.h", "WPFBannerViewDemo/WPFBannerView/*.swift", "WPFBannerViewDemo/WPFBannerView/WPFBannerView.swift", "WPFBannerViewDemo/WPFBannerView/**/*.{h,m}"]
+  s.public_header_files = ["WPFBannerViewDemo/WPFBannerView/Kingfisher.h"]
+
 
   s.requires_arc = true
 

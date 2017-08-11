@@ -6,8 +6,10 @@
 //  Copyright © 2017年 http://codewpf.com/. All rights reserved.
 //
 
-#ifndef WPFBannerView_h
-#define WPFBannerView_h
+#import <Foundation/Foundation.h>
 
+//! Project version number for WPFBannerView.
+FOUNDATION_EXPORT double WPFBannerViewVersionNumber;
 
-#endif /* WPFBannerView_h */
+//! Project version string for WPFBannerView.
+FOUNDATION_EXPORT const unsigned char WPFBannerViewVersionString[];
