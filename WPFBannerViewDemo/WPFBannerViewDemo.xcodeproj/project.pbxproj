@@ -14,10 +14,7 @@
 		FA2D5D551EFE6D1100E5903F /* banner_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA2D5D521EFE6D1100E5903F /* banner_1.jpg */; };
 		FA2D5D561EFE6D1100E5903F /* banner_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA2D5D531EFE6D1100E5903F /* banner_2.jpg */; };
 		FA2D5D571EFE6D1100E5903F /* banner_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA2D5D541EFE6D1100E5903F /* banner_3.jpg */; };
-		FA85436A1F299AB4003619CE /* WPFBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8543691F299AB4003619CE /* WPFBannerView.swift */; };
-		FA85436C1F2AD7FC003619CE /* WPFBannerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85436B1F2AD7FC003619CE /* WPFBannerComponents.swift */; };
 		FA90865E1EFE840B00746AA1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA90865D1EFE840B00746AA1 /* Launch Screen.storyboard */; };
-		FAC29C2D1F297DEA00C96419 /* WPFTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC29C2C1F297DEA00C96419 /* WPFTimer.swift */; };
 		FAC3851C1F3C929600945C80 /* current_dot_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC385181F3C929500945C80 /* current_dot_image@2x.png */; };
 		FAC3851D1F3C929600945C80 /* current_dot_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC385191F3C929500945C80 /* current_dot_image@3x.png */; };
 		FAC3851E1F3C929600945C80 /* dot_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC3851A1F3C929500945C80 /* dot_image@2x.png */; };
@@ -27,6 +24,9 @@
 		FAEC65DC1F3D6EA3002A4891 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC65D51F3D6EA3002A4891 /* TAAnimatedDotView.m */; };
 		FAEC65DD1F3D6EA3002A4891 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC65D71F3D6EA3002A4891 /* TADotView.m */; };
 		FAEC65DE1F3D6EA3002A4891 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC65D91F3D6EA3002A4891 /* TAPageControl.m */; };
+		FAEC66201F3DBDDD002A4891 /* WPFBannerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC661D1F3DBDDD002A4891 /* WPFBannerComponents.swift */; };
+		FAEC66211F3DBDDD002A4891 /* WPFBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC661E1F3DBDDD002A4891 /* WPFBannerView.swift */; };
+		FAEC66221F3DBDDD002A4891 /* WPFTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC661F1F3DBDDD002A4891 /* WPFTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,11 +41,8 @@
 		FA2D5D521EFE6D1100E5903F /* banner_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banner_1.jpg; sourceTree = "<group>"; };
 		FA2D5D531EFE6D1100E5903F /* banner_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banner_2.jpg; sourceTree = "<group>"; };
 		FA2D5D541EFE6D1100E5903F /* banner_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banner_3.jpg; sourceTree = "<group>"; };
-		FA8543691F299AB4003619CE /* WPFBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFBannerView.swift; sourceTree = "<group>"; };
-		FA85436B1F2AD7FC003619CE /* WPFBannerComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFBannerComponents.swift; sourceTree = "<group>"; };
 		FA90865D1EFE840B00746AA1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		FAC29C1D1F28385500C96419 /* WPFBannerViewDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WPFBannerViewDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		FAC29C2C1F297DEA00C96419 /* WPFTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFTimer.swift; sourceTree = "<group>"; };
 		FAC385181F3C929500945C80 /* current_dot_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "current_dot_image@2x.png"; sourceTree = "<group>"; };
 		FAC385191F3C929500945C80 /* current_dot_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "current_dot_image@3x.png"; sourceTree = "<group>"; };
 		FAC3851A1F3C929500945C80 /* dot_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot_image@2x.png"; sourceTree = "<group>"; };
@@ -60,6 +57,10 @@
 		FAEC65D71F3D6EA3002A4891 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
 		FAEC65D81F3D6EA3002A4891 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
 		FAEC65D91F3D6EA3002A4891 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		FAEC661D1F3DBDDD002A4891 /* WPFBannerComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFBannerComponents.swift; sourceTree = "<group>"; };
+		FAEC661E1F3DBDDD002A4891 /* WPFBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFBannerView.swift; sourceTree = "<group>"; };
+		FAEC661F1F3DBDDD002A4891 /* WPFTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFTimer.swift; sourceTree = "<group>"; };
+		FAEC66231F3DBF65002A4891 /* WPFBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPFBannerView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,11 +128,10 @@
 		FA2D5D4C1EFE65DA00E5903F /* WPFBannerView */ = {
 			isa = PBXGroup;
 			children = (
+				FAEC661C1F3DBDDD002A4891 /* Core */,
 				FAEC65CE1F3D6EA3002A4891 /* iCarousel */,
 				FAEC65D11F3D6EA3002A4891 /* PageControl */,
-				FA8543691F299AB4003619CE /* WPFBannerView.swift */,
-				FA85436B1F2AD7FC003619CE /* WPFBannerComponents.swift */,
-				FAC29C2C1F297DEA00C96419 /* WPFTimer.swift */,
+				FAEC66231F3DBF65002A4891 /* WPFBannerView.h */,
 			);
 			path = WPFBannerView;
 			sourceTree = "<group>";
@@ -172,6 +172,16 @@
 				FAEC65D91F3D6EA3002A4891 /* TAPageControl.m */,
 			);
 			path = PageControl;
+			sourceTree = "<group>";
+		};
+		FAEC661C1F3DBDDD002A4891 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FAEC661D1F3DBDDD002A4891 /* WPFBannerComponents.swift */,
+				FAEC661E1F3DBDDD002A4891 /* WPFBannerView.swift */,
+				FAEC661F1F3DBDDD002A4891 /* WPFTimer.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,14 +316,14 @@
 			files = (
 				FAEC65DC1F3D6EA3002A4891 /* TAAnimatedDotView.m in Sources */,
 				FAEC65DD1F3D6EA3002A4891 /* TADotView.m in Sources */,
-				FA85436A1F299AB4003619CE /* WPFBannerView.swift in Sources */,
 				FA2D5D3D1EFE639F00E5903F /* ViewController.swift in Sources */,
 				FA2D5D3B1EFE639F00E5903F /* AppDelegate.swift in Sources */,
 				FAEC65DB1F3D6EA3002A4891 /* TAAbstractDotView.m in Sources */,
+				FAEC66221F3DBDDD002A4891 /* WPFTimer.swift in Sources */,
+				FAEC66211F3DBDDD002A4891 /* WPFBannerView.swift in Sources */,
+				FAEC66201F3DBDDD002A4891 /* WPFBannerComponents.swift in Sources */,
 				FAEC65DA1F3D6EA3002A4891 /* iCarousel.m in Sources */,
 				FAEC65DE1F3D6EA3002A4891 /* TAPageControl.m in Sources */,
-				FAC29C2D1F297DEA00C96419 /* WPFTimer.swift in Sources */,
-				FA85436C1F2AD7FC003619CE /* WPFBannerComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
