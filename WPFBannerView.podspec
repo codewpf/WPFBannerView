@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "WPFBannerView"
-  s.version      = "0.1.1"
+  s.version      = "0.2.1"
   s.summary      = "A convenient way to init BannerView"
 
  s.description   = <<-DESC
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
 
   s.author             = { "alex" => "ioswpf@gmail.com" }
-  s.social_media_url   = "https://twitter.com/Alex___0394"
+  #s.social_media_url   = "https://twitter.com/Alex___0394"
 
   s.platform     = :ios, "9.0"
 
