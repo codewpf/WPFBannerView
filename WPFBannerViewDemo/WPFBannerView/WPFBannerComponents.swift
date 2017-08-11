@@ -8,21 +8,21 @@
 
 import Foundation
 
-typealias WPFBannerViewBlock = (_ bannerView: WPFBannerView, _ index: Int) -> Void
+public typealias WPFBannerViewBlock = (_ bannerView: WPFBannerView, _ index: Int) -> Void
 
-@objc protocol WPFBannerViewDelegate {
+@objc public protocol WPFBannerViewDelegate {
     @objc optional func bannerView(_ bannerView: WPFBannerView, didSelectItemAt index: Int)
     @objc optional func bannerView(_ bannerView: WPFBannerView, didScrollItemTo index: Int)
 }
 
 
 //MARK: - LET Project property
-struct Constant {
+public struct Constant {
     static let screenWidth = UIScreen.main.bounds.size.width
     static let screenHeight = UIScreen.main.bounds.size.height
 }
 
-struct Project  {
+public struct Project  {
     
     static let labelFont: UIFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
     static let labelTextColor: UIColor = UIColor.white
@@ -39,13 +39,13 @@ struct Project  {
 }
 
 //MARK: - ENUM
-enum WPFBannerAlignment: Int {
+public enum WPFBannerAlignment: Int {
     case left
     case right
     case center
 }
 
-enum WPFBannerType {
+public enum WPFBannerType {
      case linear
      case rotary
      case cylinder
@@ -53,7 +53,7 @@ enum WPFBannerType {
      case coverFlow2
 }
 
-enum WPFPageControlStyle {
+public enum WPFPageControlStyle {
     case system
     case tap
 }
