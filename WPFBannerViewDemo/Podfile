@@ -4,6 +4,4 @@ use_frameworks!
 
 target 'WPFBannerViewDemo’ do
   pod 'Kingfisher', '~> 3.0'
-  pod 'iCarousel'
-  pod 'TAPageControl'
 end	
