@@ -106,6 +106,13 @@ public class WPFBannerView: UIView {
         self.pInit()
     }
     required public init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
+    
+    deinit {
+        if self.timer != nil {
+            self.timer!.cancel()
+            self.timer = nil
+        }
+    }
 }
 
 
@@ -564,12 +571,14 @@ public extension WPFBannerView {
     
     /// 初始化计时器
     fileprivate func initTimer() {
-        self.timer?.cancel()
-        self.timer = nil
+        if self.timer != nil {
+            self.timer!.cancel()
+            self.timer = nil
+        }
         self.timer = WPFTimer(interval: .seconds(self.pAutoScrollInterval), repeats: true, queue: .main, handler: { (timer) in
             self.timerAction()
         })
-        self.timer?.start()
+        self.timer!.start()
     }
     
     /// 计时器方法
@@ -586,7 +595,6 @@ public extension WPFBannerView {
         }
         self.banner.scrollToItem(at: index, animated: true)
     }
-    
     
 }
 
