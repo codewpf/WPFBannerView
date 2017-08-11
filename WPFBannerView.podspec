@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "WPFBannerView"
-  s.version      = "0.2.2"
+  s.version      = "0.2.5"
   s.summary      = "A convenient way to init BannerView"
 
  s.description   = <<-DESC
@@ -13,8 +13,6 @@ Pod::Spec.new do |s|
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
-
-
   s.author             = { "alex" => "ioswpf@gmail.com" }
   #s.social_media_url   = "https://twitter.com/Alex___0394"
 
@@ -23,8 +21,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/codewpf/WPFBannerView.git", :tag => "#{s.version}" }
 
 
-  s.source_files = ["WPFBannerViewDemo/WPFBannerView/Kingfisher.h", "WPFBannerViewDemo/WPFBannerView/*.swift", "WPFBannerViewDemo/WPFBannerView/WPFBannerView.swift", "WPFBannerViewDemo/WPFBannerView/**/*.{h,m}"]
-  s.public_header_files = ["WPFBannerViewDemo/WPFBannerView/Kingfisher.h"]
+  s.source_files = ["WPFBannerViewDemo/WPFBannerView/WPFBannerView.swift", "WPFBannerViewDemo/WPFBannerView/*.swift", "WPFBannerViewDemo/WPFBannerView/**/*.{h,m}"]
 
 
   s.requires_arc = true

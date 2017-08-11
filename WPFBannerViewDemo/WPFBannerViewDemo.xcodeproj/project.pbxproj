@@ -60,7 +60,6 @@
 		FAEC65D71F3D6EA3002A4891 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
 		FAEC65D81F3D6EA3002A4891 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
 		FAEC65D91F3D6EA3002A4891 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
-		FAEC661B1F3DADDB002A4891 /* WPFBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPFBannerView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +132,6 @@
 				FA8543691F299AB4003619CE /* WPFBannerView.swift */,
 				FA85436B1F2AD7FC003619CE /* WPFBannerComponents.swift */,
 				FAC29C2C1F297DEA00C96419 /* WPFTimer.swift */,
-				FAEC661B1F3DADDB002A4891 /* WPFBannerView.h */,
 			);
 			path = WPFBannerView;
 			sourceTree = "<group>";
