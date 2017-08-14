@@ -8,10 +8,10 @@
 
 import Foundation
 
-/// 回调Block
+/// Action Block
 public typealias WPFBannerViewBlock = (_ bannerView: WPFBannerView, _ index: Int) -> Void
 
-/// 回调协议
+/// Action Protocol
 @objc public protocol WPFBannerViewDelegate {
     @objc optional func bannerView(_ bannerView: WPFBannerView, didSelectItemAt index: Int)
     @objc optional func bannerView(_ bannerView: WPFBannerView, didScrollItemTo index: Int)
@@ -39,14 +39,14 @@ struct Project  {
 }
 
 //MARK: - ENUM
-/// 对齐方式
+/// WPFBanner Alignment, pageControl has this property setting.
 public enum WPFBannerAlignment: Int {
     case left
     case right
     case center
 }
 
-/// Banner Style. If you want see detail, please check the iCarousel.
+/// Banner Style. If you want to see the detail, please clone the iCarousel.
 public enum WPFBannerStyle {
      case linear
      case rotary

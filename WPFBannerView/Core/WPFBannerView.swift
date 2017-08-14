@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 
 // MARK: - Property & Init
+/// WPFBannerView Class
 public class WPFBannerView: UIView {
     
     ////////// base //////////
@@ -117,6 +118,7 @@ public class WPFBannerView: UIView {
 
 
 // MARK: - Calaulate Properties
+/// Public Property
 public extension WPFBannerView {
     /// 是否只显示文字，默认false
     public var isOnlyText: Bool {
@@ -384,6 +386,7 @@ public extension WPFBannerView {
 }
 
 // MARK: - Init
+/// Convenience static method
 public extension WPFBannerView {
     fileprivate func pInit() {
         ///// Banner /////
@@ -601,6 +604,7 @@ public extension WPFBannerView {
 
 
 // MARK: - Delegate
+/// iCarouse Delegate
 extension WPFBannerView: iCarouselDataSource, iCarouselDelegate {
     public func numberOfItems(in carousel: iCarousel) -> Int {
         if self.pISOnlyText {
