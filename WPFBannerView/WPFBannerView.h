@@ -2,7 +2,7 @@
 //  WPFBannerView.h
 //  WPFBannerViewDemo
 //
-//  Created by alex on 2017/8/11.
+//  Created by alex on 2017/8/14.
 //  Copyright © 2017年 http://codewpf.com/. All rights reserved.
 //
 

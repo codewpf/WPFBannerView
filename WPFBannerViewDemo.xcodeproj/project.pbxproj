@@ -60,7 +60,7 @@
 		FAEC661D1F3DBDDD002A4891 /* WPFBannerComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFBannerComponents.swift; sourceTree = "<group>"; };
 		FAEC661E1F3DBDDD002A4891 /* WPFBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFBannerView.swift; sourceTree = "<group>"; };
 		FAEC661F1F3DBDDD002A4891 /* WPFTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFTimer.swift; sourceTree = "<group>"; };
-		FAEC66231F3DBF65002A4891 /* WPFBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPFBannerView.h; sourceTree = "<group>"; };
+		FAEC66241F413C84002A4891 /* WPFBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPFBannerView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,7 @@
 				FAEC661C1F3DBDDD002A4891 /* Core */,
 				FAEC65CE1F3D6EA3002A4891 /* iCarousel */,
 				FAEC65D11F3D6EA3002A4891 /* PageControl */,
-				FAEC66231F3DBF65002A4891 /* WPFBannerView.h */,
+				FAEC66241F413C84002A4891 /* WPFBannerView.h */,
 			);
 			path = WPFBannerView;
 			sourceTree = "<group>";
