@@ -118,8 +118,6 @@ public class WPFBannerView: UIView {
 
 // MARK: - Calaulate Properties
 public extension WPFBannerView {
-    
-    
     /// 是否只显示文字，默认false
     public var isOnlyText: Bool {
         get {
@@ -158,7 +156,7 @@ public extension WPFBannerView {
     }
     
     /// banner类型，默认.linear
-    public var type: WPFBannerType {
+    public var type: WPFBannerStyle {
         get {
             switch self.banner.type {
             case .linear: return .linear
@@ -404,12 +402,15 @@ public extension WPFBannerView {
         self.initTimer()
     }
     
+    /// Init with delegate
     public static func bannerView(frame: CGRect, imageURLS: [String], titles: [String]?, placeholder: UIImage?, delegate: WPFBannerViewDelegate) -> WPFBannerView {
         let bannerView = WPFBannerView(frame: frame)
         bannerView.staticInit(imageURLS: imageURLS, titles: titles, placeholder: placeholder)
         bannerView.delegate = delegate
         return bannerView
     }
+    
+    /// Init with Block
     public static func bannerView(frame: CGRect, imageURLS: [String], titles: [String]?, placeholder: UIImage?, didSelect select: WPFBannerViewBlock?, didScroll scroll: WPFBannerViewBlock? = nil) -> WPFBannerView {
         let bannerView = WPFBannerView(frame: frame)
         bannerView.staticInit(imageURLS: imageURLS, titles: titles, placeholder: placeholder)

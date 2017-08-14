@@ -8,8 +8,10 @@
 
 import Foundation
 
+/// 回调Block
 public typealias WPFBannerViewBlock = (_ bannerView: WPFBannerView, _ index: Int) -> Void
 
+/// 回调协议
 @objc public protocol WPFBannerViewDelegate {
     @objc optional func bannerView(_ bannerView: WPFBannerView, didSelectItemAt index: Int)
     @objc optional func bannerView(_ bannerView: WPFBannerView, didScrollItemTo index: Int)
@@ -17,13 +19,12 @@ public typealias WPFBannerViewBlock = (_ bannerView: WPFBannerView, _ index: Int
 
 
 //MARK: - LET Project property
-public struct Constant {
+struct Constant {
     static let screenWidth = UIScreen.main.bounds.size.width
     static let screenHeight = UIScreen.main.bounds.size.height
 }
 
-public struct Project  {
-    
+struct Project  {
     static let labelFont: UIFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
     static let labelTextColor: UIColor = UIColor.white
     static let labelBackgroundColor: UIColor = UIColor(white: 0.3, alpha: 0.5)
@@ -35,17 +36,18 @@ public struct Project  {
     static let pageControlCurrentDotColor: UIColor = UIColor.white
     static let pageControlBottomOffset: CGFloat = 5
     static let pageControlLeftOffset: CGFloat = 0
-    
 }
 
 //MARK: - ENUM
+/// 对齐方式
 public enum WPFBannerAlignment: Int {
     case left
     case right
     case center
 }
 
-public enum WPFBannerType {
+/// Banner Style. If you want see detail, please check the iCarousel.
+public enum WPFBannerStyle {
      case linear
      case rotary
      case cylinder
@@ -53,8 +55,11 @@ public enum WPFBannerType {
      case coverFlow2
 }
 
+/// PageControl Style.
 public enum WPFPageControlStyle {
+    /// UIPageControl
     case system
+    /// TAPageControl
     case tap
 }
 
