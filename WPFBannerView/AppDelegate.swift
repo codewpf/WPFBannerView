@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  WPFBannerViewDemo
+//  WPFBannerView
 //
 //  Created by alex on 2017/6/24.
 //  Copyright © 2017年 http://codewpf.com/. All rights reserved.

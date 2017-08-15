@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C449C874E7B0CC08ED88C5C4 /* Pods_WPFBannerViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACE1FBBA151C68EABA4E12A /* Pods_WPFBannerViewDemo.framework */; };
+		C449C874E7B0CC08ED88C5C4 /* Pods_WPFBannerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACE1FBBA151C68EABA4E12A /* Pods_WPFBannerView.framework */; };
 		FA2D5D3B1EFE639F00E5903F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D5D3A1EFE639F00E5903F /* AppDelegate.swift */; };
 		FA2D5D3D1EFE639F00E5903F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D5D3C1EFE639F00E5903F /* ViewController.swift */; };
 		FA2D5D421EFE639F00E5903F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2D5D411EFE639F00E5903F /* Assets.xcassets */; };
 		FA2D5D551EFE6D1100E5903F /* banner_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA2D5D521EFE6D1100E5903F /* banner_1.jpg */; };
 		FA2D5D561EFE6D1100E5903F /* banner_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA2D5D531EFE6D1100E5903F /* banner_2.jpg */; };
 		FA2D5D571EFE6D1100E5903F /* banner_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA2D5D541EFE6D1100E5903F /* banner_3.jpg */; };
+		FA37C0DF1F4298D400158D93 /* WPFBannerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37C0CF1F4298D400158D93 /* WPFBannerComponents.swift */; };
+		FA37C0E01F4298D400158D93 /* WPFBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37C0D01F4298D400158D93 /* WPFBannerView.swift */; };
+		FA37C0E11F4298D400158D93 /* WPFTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37C0D11F4298D400158D93 /* WPFTimer.swift */; };
+		FA37C0E21F4298D400158D93 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA37C0D41F4298D400158D93 /* iCarousel.m */; };
+		FA37C0E31F4298D400158D93 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA37C0D71F4298D400158D93 /* TAAbstractDotView.m */; };
+		FA37C0E41F4298D400158D93 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA37C0D91F4298D400158D93 /* TAAnimatedDotView.m */; };
+		FA37C0E51F4298D400158D93 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA37C0DB1F4298D400158D93 /* TADotView.m */; };
+		FA37C0E61F4298D400158D93 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA37C0DD1F4298D400158D93 /* TAPageControl.m */; };
 		FA90865E1EFE840B00746AA1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA90865D1EFE840B00746AA1 /* Launch Screen.storyboard */; };
 		FAC3851C1F3C929600945C80 /* current_dot_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC385181F3C929500945C80 /* current_dot_image@2x.png */; };
 		FAC3851D1F3C929600945C80 /* current_dot_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC385191F3C929500945C80 /* current_dot_image@3x.png */; };
 		FAC3851E1F3C929600945C80 /* dot_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC3851A1F3C929500945C80 /* dot_image@2x.png */; };
 		FAC3851F1F3C929600945C80 /* dot_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC3851B1F3C929600945C80 /* dot_image@3x.png */; };
-		FAEC65DA1F3D6EA3002A4891 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC65D01F3D6EA3002A4891 /* iCarousel.m */; };
-		FAEC65DB1F3D6EA3002A4891 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC65D31F3D6EA3002A4891 /* TAAbstractDotView.m */; };
-		FAEC65DC1F3D6EA3002A4891 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC65D51F3D6EA3002A4891 /* TAAnimatedDotView.m */; };
-		FAEC65DD1F3D6EA3002A4891 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC65D71F3D6EA3002A4891 /* TADotView.m */; };
-		FAEC65DE1F3D6EA3002A4891 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC65D91F3D6EA3002A4891 /* TAPageControl.m */; };
-		FAEC66201F3DBDDD002A4891 /* WPFBannerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC661D1F3DBDDD002A4891 /* WPFBannerComponents.swift */; };
-		FAEC66211F3DBDDD002A4891 /* WPFBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC661E1F3DBDDD002A4891 /* WPFBannerView.swift */; };
-		FAEC66221F3DBDDD002A4891 /* WPFTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC661F1F3DBDDD002A4891 /* WPFTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		41FA67A7831BE71E2BDAB91A /* Pods-WPFBannerViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WPFBannerViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WPFBannerViewDemo/Pods-WPFBannerViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		6ACE1FBBA151C68EABA4E12A /* Pods_WPFBannerViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WPFBannerViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D82395D42D0648B52CAF7E0 /* Pods-WPFBannerViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WPFBannerViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WPFBannerViewDemo/Pods-WPFBannerViewDemo.release.xcconfig"; sourceTree = "<group>"; };
-		FA2D5D371EFE639F00E5903F /* WPFBannerViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPFBannerViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41FA67A7831BE71E2BDAB91A /* Pods-WPFBannerView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WPFBannerView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WPFBannerView/Pods-WPFBannerView.debug.xcconfig"; sourceTree = "<group>"; };
+		6ACE1FBBA151C68EABA4E12A /* Pods_WPFBannerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WPFBannerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D82395D42D0648B52CAF7E0 /* Pods-WPFBannerView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WPFBannerView.release.xcconfig"; path = "Pods/Target Support Files/Pods-WPFBannerView/Pods-WPFBannerView.release.xcconfig"; sourceTree = "<group>"; };
+		FA2D5D371EFE639F00E5903F /* WPFBannerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPFBannerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2D5D3A1EFE639F00E5903F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA2D5D3C1EFE639F00E5903F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FA2D5D411EFE639F00E5903F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,26 +41,26 @@
 		FA2D5D521EFE6D1100E5903F /* banner_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banner_1.jpg; sourceTree = "<group>"; };
 		FA2D5D531EFE6D1100E5903F /* banner_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banner_2.jpg; sourceTree = "<group>"; };
 		FA2D5D541EFE6D1100E5903F /* banner_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banner_3.jpg; sourceTree = "<group>"; };
+		FA37C0CF1F4298D400158D93 /* WPFBannerComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFBannerComponents.swift; sourceTree = "<group>"; };
+		FA37C0D01F4298D400158D93 /* WPFBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFBannerView.swift; sourceTree = "<group>"; };
+		FA37C0D11F4298D400158D93 /* WPFTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFTimer.swift; sourceTree = "<group>"; };
+		FA37C0D31F4298D400158D93 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		FA37C0D41F4298D400158D93 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		FA37C0D61F4298D400158D93 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		FA37C0D71F4298D400158D93 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		FA37C0D81F4298D400158D93 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		FA37C0D91F4298D400158D93 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		FA37C0DA1F4298D400158D93 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		FA37C0DB1F4298D400158D93 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		FA37C0DC1F4298D400158D93 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		FA37C0DD1F4298D400158D93 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		FA37C0DE1F4298D400158D93 /* WPFBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFBannerView.h; sourceTree = "<group>"; };
 		FA90865D1EFE840B00746AA1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		FAC29C1D1F28385500C96419 /* WPFBannerViewDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WPFBannerViewDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		FAC29C1D1F28385500C96419 /* WPFBannerView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WPFBannerView-Bridging-Header.h"; sourceTree = "<group>"; };
 		FAC385181F3C929500945C80 /* current_dot_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "current_dot_image@2x.png"; sourceTree = "<group>"; };
 		FAC385191F3C929500945C80 /* current_dot_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "current_dot_image@3x.png"; sourceTree = "<group>"; };
 		FAC3851A1F3C929500945C80 /* dot_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot_image@2x.png"; sourceTree = "<group>"; };
 		FAC3851B1F3C929600945C80 /* dot_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot_image@3x.png"; sourceTree = "<group>"; };
-		FAEC65CF1F3D6EA3002A4891 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
-		FAEC65D01F3D6EA3002A4891 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
-		FAEC65D21F3D6EA3002A4891 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
-		FAEC65D31F3D6EA3002A4891 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
-		FAEC65D41F3D6EA3002A4891 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
-		FAEC65D51F3D6EA3002A4891 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
-		FAEC65D61F3D6EA3002A4891 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
-		FAEC65D71F3D6EA3002A4891 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
-		FAEC65D81F3D6EA3002A4891 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
-		FAEC65D91F3D6EA3002A4891 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
-		FAEC661D1F3DBDDD002A4891 /* WPFBannerComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFBannerComponents.swift; sourceTree = "<group>"; };
-		FAEC661E1F3DBDDD002A4891 /* WPFBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFBannerView.swift; sourceTree = "<group>"; };
-		FAEC661F1F3DBDDD002A4891 /* WPFTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFTimer.swift; sourceTree = "<group>"; };
-		FAEC66241F413C84002A4891 /* WPFBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPFBannerView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C449C874E7B0CC08ED88C5C4 /* Pods_WPFBannerViewDemo.framework in Frameworks */,
+				C449C874E7B0CC08ED88C5C4 /* Pods_WPFBannerView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,7 @@
 		2850FE618894A10017B43EE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6ACE1FBBA151C68EABA4E12A /* Pods_WPFBannerViewDemo.framework */,
+				6ACE1FBBA151C68EABA4E12A /* Pods_WPFBannerView.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -86,8 +86,8 @@
 		C0062C70009B596BC8E7E8D2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				41FA67A7831BE71E2BDAB91A /* Pods-WPFBannerViewDemo.debug.xcconfig */,
-				9D82395D42D0648B52CAF7E0 /* Pods-WPFBannerViewDemo.release.xcconfig */,
+				41FA67A7831BE71E2BDAB91A /* Pods-WPFBannerView.debug.xcconfig */,
+				9D82395D42D0648B52CAF7E0 /* Pods-WPFBannerView.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -95,8 +95,8 @@
 		FA2D5D2E1EFE639F00E5903F = {
 			isa = PBXGroup;
 			children = (
-				FA2D5D391EFE639F00E5903F /* WPFBannerViewDemo */,
-				FA2D5D4C1EFE65DA00E5903F /* WPFBannerView */,
+				FA2D5D391EFE639F00E5903F /* WPFBannerView */,
+				FA37C0CD1F4298D400158D93 /* Sources */,
 				FA2D5D511EFE6C5000E5903F /* Resources */,
 				FA2D5D381EFE639F00E5903F /* Products */,
 				C0062C70009B596BC8E7E8D2 /* Pods */,
@@ -107,12 +107,12 @@
 		FA2D5D381EFE639F00E5903F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA2D5D371EFE639F00E5903F /* WPFBannerViewDemo.app */,
+				FA2D5D371EFE639F00E5903F /* WPFBannerView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FA2D5D391EFE639F00E5903F /* WPFBannerViewDemo */ = {
+		FA2D5D391EFE639F00E5903F /* WPFBannerView */ = {
 			isa = PBXGroup;
 			children = (
 				FA2D5D3A1EFE639F00E5903F /* AppDelegate.swift */,
@@ -120,18 +120,7 @@
 				FA2D5D411EFE639F00E5903F /* Assets.xcassets */,
 				FA2D5D461EFE639F00E5903F /* Info.plist */,
 				FA90865D1EFE840B00746AA1 /* Launch Screen.storyboard */,
-				FAC29C1D1F28385500C96419 /* WPFBannerViewDemo-Bridging-Header.h */,
-			);
-			path = WPFBannerViewDemo;
-			sourceTree = "<group>";
-		};
-		FA2D5D4C1EFE65DA00E5903F /* WPFBannerView */ = {
-			isa = PBXGroup;
-			children = (
-				FAEC661C1F3DBDDD002A4891 /* Core */,
-				FAEC65CE1F3D6EA3002A4891 /* iCarousel */,
-				FAEC65D11F3D6EA3002A4891 /* PageControl */,
-				FAEC66241F413C84002A4891 /* WPFBannerView.h */,
+				FAC29C1D1F28385500C96419 /* WPFBannerView-Bridging-Header.h */,
 			);
 			path = WPFBannerView;
 			sourceTree = "<group>";
@@ -150,46 +139,57 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		FAEC65CE1F3D6EA3002A4891 /* iCarousel */ = {
+		FA37C0CD1F4298D400158D93 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				FAEC65CF1F3D6EA3002A4891 /* iCarousel.h */,
-				FAEC65D01F3D6EA3002A4891 /* iCarousel.m */,
+				FA37C0CE1F4298D400158D93 /* Core */,
+				FA37C0D21F4298D400158D93 /* iCarousel */,
+				FA37C0D51F4298D400158D93 /* PageControl */,
+				FA37C0DE1F4298D400158D93 /* WPFBannerView.h */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FA37C0CE1F4298D400158D93 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FA37C0CF1F4298D400158D93 /* WPFBannerComponents.swift */,
+				FA37C0D01F4298D400158D93 /* WPFBannerView.swift */,
+				FA37C0D11F4298D400158D93 /* WPFTimer.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FA37C0D21F4298D400158D93 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				FA37C0D31F4298D400158D93 /* iCarousel.h */,
+				FA37C0D41F4298D400158D93 /* iCarousel.m */,
 			);
 			path = iCarousel;
 			sourceTree = "<group>";
 		};
-		FAEC65D11F3D6EA3002A4891 /* PageControl */ = {
+		FA37C0D51F4298D400158D93 /* PageControl */ = {
 			isa = PBXGroup;
 			children = (
-				FAEC65D21F3D6EA3002A4891 /* TAAbstractDotView.h */,
-				FAEC65D31F3D6EA3002A4891 /* TAAbstractDotView.m */,
-				FAEC65D41F3D6EA3002A4891 /* TAAnimatedDotView.h */,
-				FAEC65D51F3D6EA3002A4891 /* TAAnimatedDotView.m */,
-				FAEC65D61F3D6EA3002A4891 /* TADotView.h */,
-				FAEC65D71F3D6EA3002A4891 /* TADotView.m */,
-				FAEC65D81F3D6EA3002A4891 /* TAPageControl.h */,
-				FAEC65D91F3D6EA3002A4891 /* TAPageControl.m */,
+				FA37C0D61F4298D400158D93 /* TAAbstractDotView.h */,
+				FA37C0D71F4298D400158D93 /* TAAbstractDotView.m */,
+				FA37C0D81F4298D400158D93 /* TAAnimatedDotView.h */,
+				FA37C0D91F4298D400158D93 /* TAAnimatedDotView.m */,
+				FA37C0DA1F4298D400158D93 /* TADotView.h */,
+				FA37C0DB1F4298D400158D93 /* TADotView.m */,
+				FA37C0DC1F4298D400158D93 /* TAPageControl.h */,
+				FA37C0DD1F4298D400158D93 /* TAPageControl.m */,
 			);
 			path = PageControl;
-			sourceTree = "<group>";
-		};
-		FAEC661C1F3DBDDD002A4891 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				FAEC661D1F3DBDDD002A4891 /* WPFBannerComponents.swift */,
-				FAEC661E1F3DBDDD002A4891 /* WPFBannerView.swift */,
-				FAEC661F1F3DBDDD002A4891 /* WPFTimer.swift */,
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FA2D5D361EFE639F00E5903F /* WPFBannerViewDemo */ = {
+		FA2D5D361EFE639F00E5903F /* WPFBannerView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA2D5D491EFE639F00E5903F /* Build configuration list for PBXNativeTarget "WPFBannerViewDemo" */;
+			buildConfigurationList = FA2D5D491EFE639F00E5903F /* Build configuration list for PBXNativeTarget "WPFBannerView" */;
 			buildPhases = (
 				D735D329DC19728B4AC7A05F /* [CP] Check Pods Manifest.lock */,
 				FA2D5D331EFE639F00E5903F /* Sources */,
@@ -202,9 +202,9 @@
 			);
 			dependencies = (
 			);
-			name = WPFBannerViewDemo;
-			productName = WPFBannerViewDemo;
-			productReference = FA2D5D371EFE639F00E5903F /* WPFBannerViewDemo.app */;
+			name = WPFBannerView;
+			productName = WPFBannerView;
+			productReference = FA2D5D371EFE639F00E5903F /* WPFBannerView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -224,7 +224,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FA2D5D321EFE639F00E5903F /* Build configuration list for PBXProject "WPFBannerViewDemo" */;
+			buildConfigurationList = FA2D5D321EFE639F00E5903F /* Build configuration list for PBXProject "WPFBannerView" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -237,7 +237,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FA2D5D361EFE639F00E5903F /* WPFBannerViewDemo */,
+				FA2D5D361EFE639F00E5903F /* WPFBannerView */,
 			);
 		};
 /* End PBXProject section */
@@ -274,7 +274,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WPFBannerViewDemo/Pods-WPFBannerViewDemo-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WPFBannerView/Pods-WPFBannerView-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D735D329DC19728B4AC7A05F /* [CP] Check Pods Manifest.lock */ = {
@@ -304,7 +304,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WPFBannerViewDemo/Pods-WPFBannerViewDemo-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WPFBannerView/Pods-WPFBannerView-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -314,16 +314,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAEC65DC1F3D6EA3002A4891 /* TAAnimatedDotView.m in Sources */,
-				FAEC65DD1F3D6EA3002A4891 /* TADotView.m in Sources */,
+				FA37C0E41F4298D400158D93 /* TAAnimatedDotView.m in Sources */,
+				FA37C0E51F4298D400158D93 /* TADotView.m in Sources */,
+				FA37C0E11F4298D400158D93 /* WPFTimer.swift in Sources */,
+				FA37C0E01F4298D400158D93 /* WPFBannerView.swift in Sources */,
 				FA2D5D3D1EFE639F00E5903F /* ViewController.swift in Sources */,
+				FA37C0E31F4298D400158D93 /* TAAbstractDotView.m in Sources */,
+				FA37C0E21F4298D400158D93 /* iCarousel.m in Sources */,
+				FA37C0E61F4298D400158D93 /* TAPageControl.m in Sources */,
 				FA2D5D3B1EFE639F00E5903F /* AppDelegate.swift in Sources */,
-				FAEC65DB1F3D6EA3002A4891 /* TAAbstractDotView.m in Sources */,
-				FAEC66221F3DBDDD002A4891 /* WPFTimer.swift in Sources */,
-				FAEC66211F3DBDDD002A4891 /* WPFBannerView.swift in Sources */,
-				FAEC66201F3DBDDD002A4891 /* WPFBannerComponents.swift in Sources */,
-				FAEC65DA1F3D6EA3002A4891 /* iCarousel.m in Sources */,
-				FAEC65DE1F3D6EA3002A4891 /* TAPageControl.m in Sources */,
+				FA37C0DF1F4298D400158D93 /* WPFBannerComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,16 +425,16 @@
 		};
 		FA2D5D4A1EFE639F00E5903F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41FA67A7831BE71E2BDAB91A /* Pods-WPFBannerViewDemo.debug.xcconfig */;
+			baseConfigurationReference = 41FA67A7831BE71E2BDAB91A /* Pods-WPFBannerView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = RTCETB2ULQ;
-				INFOPLIST_FILE = WPFBannerViewDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WPFBannerView/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alex.bannerdemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alex.bannerview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "WPFBannerViewDemo/WPFBannerViewDemo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "WPFBannerView/WPFBannerView-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
@@ -442,16 +442,16 @@
 		};
 		FA2D5D4B1EFE639F00E5903F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D82395D42D0648B52CAF7E0 /* Pods-WPFBannerViewDemo.release.xcconfig */;
+			baseConfigurationReference = 9D82395D42D0648B52CAF7E0 /* Pods-WPFBannerView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = RTCETB2ULQ;
-				INFOPLIST_FILE = WPFBannerViewDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WPFBannerView/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alex.bannerdemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alex.bannerview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "WPFBannerViewDemo/WPFBannerViewDemo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "WPFBannerView/WPFBannerView-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
@@ -460,7 +460,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA2D5D321EFE639F00E5903F /* Build configuration list for PBXProject "WPFBannerViewDemo" */ = {
+		FA2D5D321EFE639F00E5903F /* Build configuration list for PBXProject "WPFBannerView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA2D5D471EFE639F00E5903F /* Debug */,
@@ -469,7 +469,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA2D5D491EFE639F00E5903F /* Build configuration list for PBXNativeTarget "WPFBannerViewDemo" */ = {
+		FA2D5D491EFE639F00E5903F /* Build configuration list for PBXNativeTarget "WPFBannerView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA2D5D4A1EFE639F00E5903F /* Debug */,

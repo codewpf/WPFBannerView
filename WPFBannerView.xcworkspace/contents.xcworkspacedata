@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:WPFBannerViewDemo.xcodeproj">
+      location = "group:/Users/alex/Github/WPFBannerView/WPFBannerView.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WPFBannerView.xcodeproj">
    </FileRef>
 </Workspace>
