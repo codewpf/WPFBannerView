@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FA2D5D361EFE639F00E5903F"
-               BuildableName = "WPFBannerView.app"
+               BlueprintIdentifier = "FAC53C9B1F443CFF0059665C"
+               BuildableName = "WPFBannerView.framework"
                BlueprintName = "WPFBannerView"
                ReferencedContainer = "container:WPFBannerView.xcodeproj">
             </BuildableReference>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FA2D5D361EFE639F00E5903F"
-            BuildableName = "WPFBannerView.app"
-            BlueprintName = "WPFBannerView"
-            ReferencedContainer = "container:WPFBannerView.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FA2D5D361EFE639F00E5903F"
-            BuildableName = "WPFBannerView.app"
+            BlueprintIdentifier = "FAC53C9B1F443CFF0059665C"
+            BuildableName = "WPFBannerView.framework"
             BlueprintName = "WPFBannerView"
             ReferencedContainer = "container:WPFBannerView.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FA2D5D361EFE639F00E5903F"
-            BuildableName = "WPFBannerView.app"
+            BlueprintIdentifier = "FAC53C9B1F443CFF0059665C"
+            BuildableName = "WPFBannerView.framework"
             BlueprintName = "WPFBannerView"
             ReferencedContainer = "container:WPFBannerView.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
