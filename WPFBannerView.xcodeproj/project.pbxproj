@@ -30,7 +30,7 @@
 		FAC53CC41F4441C00059665C /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC53CB81F4441C00059665C /* TAAnimatedDotView.m */; };
 		FAC53CC51F4441C00059665C /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC53CBA1F4441C00059665C /* TADotView.m */; };
 		FAC53CC61F4441C00059665C /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC53CBC1F4441C00059665C /* TAPageControl.m */; };
-		FAC53CC81F4445020059665C /* WPFBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = FAC53CC71F4445020059665C /* WPFBannerView.h */; };
+		FAC53D061F44502A0059665C /* WPFBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = FAC53CC71F4445020059665C /* WPFBannerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,7 +239,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAC53CC81F4445020059665C /* WPFBannerView.h in Headers */,
+				FAC53D061F44502A0059665C /* WPFBannerView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
