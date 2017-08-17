@@ -16,4 +16,6 @@ FOUNDATION_EXPORT const unsigned char WPFBannerViewVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WPFBannerView/PublicHeader.h>
 
+#import <WPFBannerView/iCarousel.h>
+#import <WPFBannerView/TAPageControl.h>
 

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "WPFBannerView"
-    s.version      = "0.3.3"
+    s.version      = "0.3.4"
     s.summary      = "A convenient way to init BannerView"
     s.license      = 'MIT'
 
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
     s.author             = { "alex" => "ioswpf@gmail.com" }
     # s.social_media_url   = "https://twitter.com/Alex___0394"
 
-    s.platform     = :ios, "8.0"
+    s.platform     = :ios, "9.0"
 
     s.source       = { :git => "https://github.com/codewpf/WPFBannerView.git", :tag => "#{s.version}" }
 
