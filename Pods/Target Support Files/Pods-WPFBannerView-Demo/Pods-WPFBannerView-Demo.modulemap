@@ -1,0 +1,6 @@
+framework module Pods_WPFBannerView_Demo {
+  umbrella header "Pods-WPFBannerView-Demo-umbrella.h"
+
+  export *
+  module * { export * }
+}
