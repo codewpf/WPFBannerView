@@ -1,4 +1,4 @@
-#WPFBannerView
+# WPFBannerView
 
 <p align="left">
 <a href="https://travis-ci.org/onevcat/Kingfisher"><img src="https://img.shields.io/travis/onevcat/Kingfisher/master.svg"></a>
@@ -17,25 +17,25 @@ WPFBannerView is simple Swift library for adding banner in your project. This pr
 The library provides two static convenient method to init your banner. 
 
 ```swift
-	let banner = WPFBannerView.bannerView(frame: CGRect(), imageURLS: [urls], titles: [titles]?, placeholder: nil?, didSelect: { (bannerView, index) in
-		// To do something
-	}, didScroll: {  (bannerView, index) in
-		// or nil
-	})
-	banner.pageControlDotColor = UIColor.xxx
-	banner.pageControlDotCurrentColor = UIColor.xxx
-	self.view.addSubview(banner)
+let banner = WPFBannerView.bannerView(frame: CGRect(), imageURLS: [urls], titles: [titles]?, placeholder: nil?, didSelect: { (bannerView, index) in
+	// To do something
+}, didScroll: {  (bannerView, index) in
+	// or nil
+})
+banner.pageControlDotColor = UIColor.xxx
+banner.pageControlDotCurrentColor = UIColor.xxx
+self.view.addSubview(banner)
 ```
 and
 
 ```swift
-	let banner = WPFBannerView.bannerView(frame: CGRect(x: 10, y: 50, width: 320, height: 134), imageURLS: remoteImageURLS, titles: [], placeholder: nil, delegate: self)
-    banner.type = .coverFlow
-    self.view.addSubview(banner)
+let banner = WPFBannerView.bannerView(frame: CGRect(x: 10, y: 50, width: 320, height: 134), imageURLS: remoteImageURLS, titles: [], placeholder: nil, delegate: self)
+banner.type = .coverFlow
+self.view.addSubview(banner)
 ```
 ```swift
-	func bannerView(_ bannerView: WPFBannerView, didScrollItemTo index: Int) {}
-    func bannerView(_ bannerView: WPFBannerView, didSelectItemAt index: Int) {}
+func bannerView(_ bannerView: WPFBannerView, didScrollItemTo index: Int) {}
+func bannerView(_ bannerView: WPFBannerView, didSelectItemAt index: Int) {}
 ```
 
 ## Installation
