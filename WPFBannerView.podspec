@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "WPFBannerView"
-    s.version      = "0.3.4"
+    s.version      = "0.3.5"
     s.summary      = "A convenient way to init BannerView"
     s.license      = 'MIT'
 

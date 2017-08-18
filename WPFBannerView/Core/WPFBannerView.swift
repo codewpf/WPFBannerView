@@ -406,7 +406,7 @@ public extension WPFBannerView {
     }
     
     /// Init with delegate
-    public static func bannerView(frame: CGRect, imageURLS: [String], titles: [String]?, placeholder: UIImage?, delegate: WPFBannerViewDelegate) -> WPFBannerView {
+    public static func bannerView(frame: CGRect, imageURLS: [String], titles: [String]?, placeholder: UIImage?, delegate: WPFBannerViewDelegate?) -> WPFBannerView {
         let bannerView = WPFBannerView(frame: frame)
         bannerView.staticInit(imageURLS: imageURLS, titles: titles, placeholder: placeholder)
         bannerView.delegate = delegate
@@ -414,7 +414,7 @@ public extension WPFBannerView {
     }
     
     /// Init with Block
-    public static func bannerView(frame: CGRect, imageURLS: [String], titles: [String]?, placeholder: UIImage?, didSelect select: WPFBannerViewBlock?, didScroll scroll: WPFBannerViewBlock? = nil) -> WPFBannerView {
+    public static func bannerView(frame: CGRect, imageURLS: [String], titles: [String]?, placeholder: UIImage?, didSelect select: WPFBannerViewBlock?, didScroll scroll: WPFBannerViewBlock?) -> WPFBannerView {
         let bannerView = WPFBannerView(frame: frame)
         bannerView.staticInit(imageURLS: imageURLS, titles: titles, placeholder: placeholder)
         bannerView.didSelectItem = select
