@@ -54,7 +54,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'target’ do
-    pod 'WPFBAnnerView'
+    pod 'WPFBannerView'
 end
 ```
 
