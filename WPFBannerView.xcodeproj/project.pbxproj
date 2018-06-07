@@ -277,7 +277,6 @@
 				FA2D5D341EFE639F00E5903F /* Frameworks */,
 				FA2D5D351EFE639F00E5903F /* Resources */,
 				DC189D453CFA004AE9F05FE6 /* [CP] Embed Pods Frameworks */,
-				6715695F997158087743466E /* [CP] Copy Pods Resources */,
 				FAC53CA81F443CFF0059665C /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -299,7 +298,6 @@
 				FAC53C981F443CFF0059665C /* Frameworks */,
 				FAC53C991F443CFF0059665C /* Headers */,
 				FAC53C9A1F443CFF0059665C /* Resources */,
-				C4072DC9F8B3F57AC33A6401 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -322,7 +320,7 @@
 				TargetAttributes = {
 					FA2D5D361EFE639F00E5903F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = RTCETB2ULQ;
+						DevelopmentTeam = V6T24MM7P2;
 						ProvisioningStyle = Automatic;
 					};
 					FAC53C9B1F443CFF0059665C = {
@@ -385,43 +383,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WPFBannerView-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6715695F997158087743466E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WPFBannerView-Demo/Pods-WPFBannerView-Demo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C4072DC9F8B3F57AC33A6401 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WPFBannerView/Pods-WPFBannerView-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D735D329DC19728B4AC7A05F /* [CP] Check Pods Manifest.lock */ = {
@@ -430,13 +401,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WPFBannerView-Demo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC189D453CFA004AE9F05FE6 /* [CP] Embed Pods Frameworks */ = {
@@ -445,9 +419,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WPFBannerView-Demo/Pods-WPFBannerView-Demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -597,10 +574,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8C27E5BA3944F3EF7BB2125E /* Pods-WPFBannerView-Demo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = RTCETB2ULQ;
+				DEVELOPMENT_TEAM = V6T24MM7P2;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/WPFBannerView/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alex.bannerview;
@@ -615,10 +591,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F1E19A40AE3BF11CA2600CA5 /* Pods-WPFBannerView-Demo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = RTCETB2ULQ;
+				DEVELOPMENT_TEAM = V6T24MM7P2;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/WPFBannerView/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alex.bannerview;
