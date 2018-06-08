@@ -11,7 +11,7 @@ WPFBannerView is simple Swift library for adding banner in your project. This pr
 
 ## Requirements
 - iOS 9.0+
-- Swift 3.0+
+- Swift 4.0+
 
 ## How To Use
 The library provides two static convenient method to init your banner. 
@@ -50,9 +50,6 @@ There are two way to use WPFBannerView in your project, or directly drag the WPF
 
 #### Podfile
 ```
-platform :ios, '9.0'
-use_frameworks!
-
 target 'target’ do
     pod 'WPFBannerView'
 end
@@ -85,4 +82,4 @@ import WPFBannerView
 Follow and contact me on [Twitter](https://twitter.com/Alex___0394) or [Sina Weibo](http://weibo.com/codewpf ). If you find an issue, just [open a ticket](https://github.com/codewpf/WPFBannerView/issues/new). Pull requests are warmly welcome as well.
 
 ## License
-WPFBannerView is released under the MIT license. See LICENSE for details.
+WPFBannerView is released under the MIT license. See [LICENSE](https://en.wikipedia.org/wiki/MIT_License) for details.
