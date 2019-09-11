@@ -10,19 +10,19 @@
 
 import Foundation
 
-public class WPFTimer {
+class WPFTimer {
     
     private let internalTimer: DispatchSourceTimer
     
     private var isRunning = false
     
-    public let repeats: Bool
+    let repeats: Bool
     
-    public typealias WPFTimerHandler = (WPFTimer) -> Void
+    typealias WPFTimerHandler = (WPFTimer) -> Void
     
     private var handler: WPFTimerHandler
     
-    public init(interval: DispatchTimeInterval, repeats: Bool = false, queue: DispatchQueue = .main , handler: @escaping WPFTimerHandler) {
+    init(interval: DispatchTimeInterval, repeats: Bool = false, queue: DispatchQueue = .main , handler: @escaping WPFTimerHandler) {
         
         self.handler = handler
         self.repeats = repeats
@@ -40,7 +40,7 @@ public class WPFTimer {
         }
     }
     
-    public static func repeaticTimer(interval: DispatchTimeInterval, queue: DispatchQueue = .main , handler: @escaping WPFTimerHandler ) -> WPFTimer {
+    static func repeaticTimer(interval: DispatchTimeInterval, queue: DispatchQueue = .main , handler: @escaping WPFTimerHandler ) -> WPFTimer {
         return WPFTimer(interval: interval, repeats: true, queue: queue, handler: handler)
     }
     
@@ -51,7 +51,7 @@ public class WPFTimer {
     }
     
     //You can use this method to fire a repeating timer without interrupting its regular firing schedule. If the timer is non-repeating, it is automatically invalidated after firing, even if its scheduled fire date has not arrived.
-    public func fire() {
+    func fire() {
         if repeats {
             handler(self)
         } else {
@@ -60,33 +60,33 @@ public class WPFTimer {
         }
     }
     
-    public func start() {
+    func start() {
         if !isRunning {
             internalTimer.resume()
             isRunning = true
         }
     }
     
-    public func suspend() {
+    func suspend() {
         if isRunning {
             internalTimer.suspend()
             isRunning = false
         }
     }
     
-    public func cancel() {
+    func cancel() {
         if internalTimer.isCancelled != true {
             internalTimer.cancel()
         }
     }
     
-    public func rescheduleRepeating(interval: DispatchTimeInterval) {
+    func rescheduleRepeating(interval: DispatchTimeInterval) {
         if repeats {
             internalTimer.schedule(deadline: .now() + interval, repeating: interval)
         }
     }
     
-    public func rescheduleHandler(handler: @escaping WPFTimerHandler) {
+    func rescheduleHandler(handler: @escaping WPFTimerHandler) {
         self.handler = handler
         internalTimer.setEventHandler { [weak self] in
             if let strongSelf = self {
@@ -98,11 +98,11 @@ public class WPFTimer {
 }
 
 //MARK: Throttle
-public extension WPFTimer {
+extension WPFTimer {
     
     private static var timers = [String:DispatchSourceTimer]()
     
-    public static func throttle(interval: DispatchTimeInterval, identifier: String, queue: DispatchQueue = .main , handler: @escaping () -> Void ) {
+    static func throttle(interval: DispatchTimeInterval, identifier: String, queue: DispatchQueue = .main , handler: @escaping () -> Void ) {
         
         if let previousTimer = timers[identifier] {
             previousTimer.cancel()
@@ -121,7 +121,7 @@ public extension WPFTimer {
 }
 
 //MARK: Count Down
-public class WPFCountDownTimer {
+class WPFCountDownTimer {
     
     let internalTimer: WPFTimer
     
@@ -131,7 +131,7 @@ public class WPFCountDownTimer {
     
     let handler: (WPFCountDownTimer, _ leftTimes: Int) -> Void
     
-    public init(interval: DispatchTimeInterval, times: Int,queue: DispatchQueue = .main , handler:  @escaping (WPFCountDownTimer, _ leftTimes: Int) -> Void ) {
+    init(interval: DispatchTimeInterval, times: Int,queue: DispatchQueue = .main , handler:  @escaping (WPFCountDownTimer, _ leftTimes: Int) -> Void ) {
         
         self.leftTimes = times
         self.originalTimes = times
@@ -150,23 +150,23 @@ public class WPFCountDownTimer {
         }
     }
     
-    public func start() {
+    func start() {
         self.internalTimer.start()
     }
     
-    public func suspend() {
+    func suspend() {
         self.internalTimer.suspend()
     }
     
-    public func reCountDown() {
+    func reCountDown() {
         self.leftTimes = self.originalTimes
     }
     
 }
 
-public extension DispatchTimeInterval {
+extension DispatchTimeInterval {
     
-    public static func fromSeconds(_ seconds: Double) -> DispatchTimeInterval {
+    static func fromSeconds(_ seconds: Double) -> DispatchTimeInterval {
         return .nanoseconds(Int(seconds * Double(NSEC_PER_SEC)))
     }
 }

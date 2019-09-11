@@ -9,10 +9,10 @@
 import Foundation
 
 /// Action Block
-public typealias WPFBannerViewBlock = (_ bannerView: WPFBannerView, _ index: Int) -> Void
+typealias WPFBannerViewBlock = (_ bannerView: WPFBannerView, _ index: Int) -> Void
 
 /// Action Protocol
-@objc public protocol WPFBannerViewDelegate {
+@objc protocol WPFBannerViewDelegate {
     @objc optional func bannerView(_ bannerView: WPFBannerView, didSelectItemAt index: Int)
     @objc optional func bannerView(_ bannerView: WPFBannerView, didScrollItemTo index: Int)
 }
@@ -40,14 +40,14 @@ struct Project  {
 
 //MARK: - ENUM
 /// WPFBanner Alignment, pageControl has this property setting.
-public enum WPFBannerAlignment: Int {
+enum WPFBannerAlignment: Int {
     case left
     case right
     case center
 }
 
 /// Banner Style. If you want to see the detail, please clone the iCarousel.
-public enum WPFBannerStyle {
+enum WPFBannerStyle {
      case linear
      case rotary
      case cylinder
@@ -56,7 +56,7 @@ public enum WPFBannerStyle {
 }
 
 /// PageControl Style.
-public enum WPFPageControlStyle {
+enum WPFPageControlStyle {
     /// UIPageControl
     case system
     /// TAPageControl

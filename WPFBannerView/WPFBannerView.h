@@ -14,7 +14,7 @@ FOUNDATION_EXPORT double WPFBannerViewVersionNumber;
 //! Project version string for WPFBannerView.
 FOUNDATION_EXPORT const unsigned char WPFBannerViewVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <WPFBannerView/PublicHeader.h>
+// In this header, you should import all the headers of your framework using statements like #import <WPFBannerView/PublicHeader.h>
 
 #import <WPFBannerView/iCarousel.h>
 #import <WPFBannerView/TAPageControl.h>

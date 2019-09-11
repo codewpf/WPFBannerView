@@ -11,7 +11,7 @@ import Kingfisher
 
 // MARK: - Property & Init
 /// WPFBannerView Class
-public class WPFBannerView: UIView {
+class WPFBannerView: UIView {
     
     ////////// base //////////
     /// bannerView
@@ -49,7 +49,7 @@ public class WPFBannerView: UIView {
     
     ////////// Setting //////////
     /// 内容模式，默认scaleToFill
-    fileprivate var pContentMode: UIViewContentMode = .scaleToFill
+    fileprivate var pContentMode: UIView.ContentMode = .scaleToFill
     /// 是否无限循环，默认ture
     fileprivate var pISLoop: Bool = true
     
@@ -106,7 +106,7 @@ public class WPFBannerView: UIView {
         
         self.pInit()
     }
-    required public init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
+    required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
     
     deinit {
         if self.timer != nil {
@@ -118,10 +118,10 @@ public class WPFBannerView: UIView {
 
 
 // MARK: - Calaulate Properties
-/// Public Property
-public extension WPFBannerView {
+/// Property
+extension WPFBannerView {
     /// 是否只显示文字，默认false
-    public var isOnlyText: Bool {
+    var isOnlyText: Bool {
         get {
             return self.pISOnlyText
         }
@@ -134,7 +134,7 @@ public extension WPFBannerView {
     }
     
     /// 内容模式，默认scaleToFill
-    public var contentModel: UIViewContentMode {
+     var contentModel: UIView.ContentMode {
         get {
             return self.pContentMode
         }
@@ -147,7 +147,7 @@ public extension WPFBannerView {
     }
 
     /// 自动滚动时间
-    public var autoScrollInterval: Int {
+    var autoScrollInterval: Int {
         get {
             return self.pAutoScrollInterval
         }
@@ -158,7 +158,7 @@ public extension WPFBannerView {
     }
     
     /// banner类型，默认.linear
-    public var type: WPFBannerStyle {
+    var type: WPFBannerStyle {
         get {
             switch self.banner.type {
             case .linear: return .linear
@@ -181,7 +181,7 @@ public extension WPFBannerView {
         }
     }
     /// 是否垂直滚动，默认false
-    public var isVertical: Bool {
+    var isVertical: Bool {
         get {
             return self.banner.isVertical
         }
@@ -191,7 +191,7 @@ public extension WPFBannerView {
         }
     }
     /// 是否裁剪视图边界 默认true
-    override public var clipsToBounds: Bool {
+    override var clipsToBounds: Bool {
         get {
             return self.banner.clipsToBounds
         }
@@ -201,7 +201,7 @@ public extension WPFBannerView {
         }
     }
     /// 是否无限循环，默认ture
-    public var isLoop: Bool {
+    var isLoop: Bool {
         get {
             return self.pISLoop
         }
@@ -213,7 +213,7 @@ public extension WPFBannerView {
     
     ////////// PageControl //////////
     /// 是否显示分页控件，默认true
-    public var pageControlISShow: Bool {
+    var pageControlISShow: Bool {
         get {
                 return self.pPageControlISShow
         }
@@ -223,7 +223,7 @@ public extension WPFBannerView {
         }
     }
     /// 是否单页隐藏PageControl，默认false
-    public var pageControlISHideWhenSingle: Bool {
+    var pageControlISHideWhenSingle: Bool {
         get {
             return self.pPageControlISHideWhenSingle
         }
@@ -233,7 +233,7 @@ public extension WPFBannerView {
         }
     }
     /// pageControl 样式
-    public var pageControlStyle: WPFPageControlStyle {
+    var pageControlStyle: WPFPageControlStyle {
         get {
             return self.pPageControlStyle
         }
@@ -243,7 +243,7 @@ public extension WPFBannerView {
         }
     }
     /// pageControl 对齐方式
-    public var pageControlAlignment: WPFBannerAlignment {
+    var pageControlAlignment: WPFBannerAlignment {
         get {
             return self.pPageControlAlignment
         }
@@ -253,7 +253,7 @@ public extension WPFBannerView {
         }
     }
     /// pageControl tap style dot size, this will automatic set style to tap
-    public var pageControlDotSize: CGSize {
+    var pageControlDotSize: CGSize {
         get {
             return self.pPageControlDotSize
         }
@@ -264,7 +264,7 @@ public extension WPFBannerView {
         }
     }
     /// pageControl tap style dot image, this will automatic set style to tap
-    public var pageControlDotImage: UIImage? {
+    var pageControlDotImage: UIImage? {
         get {
             return self.pPageControlDotImage
         }
@@ -275,7 +275,7 @@ public extension WPFBannerView {
         }
     }
     /// pageControl tap style current dot image, this will automatic set style to tap
-    public var pageControlCurrentImage: UIImage? {
+    var pageControlCurrentImage: UIImage? {
         get {
             return self.pPageControlDotImage
         }
@@ -286,7 +286,7 @@ public extension WPFBannerView {
         }
     }
     /// pageControl system style dot color, this will automatic set style to system
-    public var pageControlDotColor: UIColor {
+    var pageControlDotColor: UIColor {
         get {
             return self.pPageControlDotColor
         }
@@ -297,7 +297,7 @@ public extension WPFBannerView {
         }
     }
     /// pageControl system style current dot color, this will automatic set style to system
-    public var pageControlDotCurrentColor: UIColor {
+    var pageControlDotCurrentColor: UIColor {
         get {
             return self.pPageControlCurrentDotColor
         }
@@ -308,7 +308,7 @@ public extension WPFBannerView {
         }
     }
     /// pageControl 距离底部的距离
-    public var pageControlBottomOffset: CGFloat {
+    var pageControlBottomOffset: CGFloat {
         get {
             return self.pPageControlBottomOffset
         }
@@ -318,7 +318,7 @@ public extension WPFBannerView {
         }
     }
     /// pageControl 距离左边的距离
-    public var pageControlLeftOffset: CGFloat {
+    var pageControlLeftOffset: CGFloat {
         get {
             return self.pPageControlLeftOffset
         }
@@ -332,7 +332,7 @@ public extension WPFBannerView {
     
     ////////// Label //////////
     /// label 字体
-    public var labelTextFont: UIFont {
+    var labelTextFont: UIFont {
         get {
             return self.pLabelFont
         }
@@ -342,7 +342,7 @@ public extension WPFBannerView {
         }
     }
     /// label 字体颜色
-    public var labelTextColor: UIColor {
+    var labelTextColor: UIColor {
         get {
             return self.pLabelTextColor
         }
@@ -352,7 +352,7 @@ public extension WPFBannerView {
         }
     }
     /// label 背景颜色
-    public var labelBackgroundColor: UIColor {
+    var labelBackgroundColor: UIColor {
         get {
             return self.pLabelBackgroundColor
         }
@@ -362,7 +362,7 @@ public extension WPFBannerView {
         }
     }
     /// label 高度
-    public var labelHeight: CGFloat {
+    var labelHeight: CGFloat {
         get {
             return self.pLabelHeight
         }
@@ -372,7 +372,7 @@ public extension WPFBannerView {
         }
     }
     /// label 对齐方式
-    public var labelTextAlignment: NSTextAlignment {
+    var labelTextAlignment: NSTextAlignment {
         get {
             return self.pLabelTextAlignment
         }
@@ -387,7 +387,7 @@ public extension WPFBannerView {
 
 // MARK: - Init
 /// Convenience static method
-public extension WPFBannerView {
+extension WPFBannerView {
     fileprivate func pInit() {
         ///// Banner /////
         /// static
@@ -406,7 +406,7 @@ public extension WPFBannerView {
     }
     
     /// Init with delegate
-    public static func bannerView(frame: CGRect, imageURLS: [String], titles: [String]?, placeholder: UIImage?, delegate: WPFBannerViewDelegate?) -> WPFBannerView {
+    static func bannerView(frame: CGRect, imageURLS: [String], titles: [String]?, placeholder: UIImage?, delegate: WPFBannerViewDelegate?) -> WPFBannerView {
         let bannerView = WPFBannerView(frame: frame)
         bannerView.staticInit(imageURLS: imageURLS, titles: titles, placeholder: placeholder)
         bannerView.delegate = delegate
@@ -414,7 +414,7 @@ public extension WPFBannerView {
     }
     
     /// Init with Block
-    public static func bannerView(frame: CGRect, imageURLS: [String], titles: [String]?, placeholder: UIImage?, didSelect select: WPFBannerViewBlock?, didScroll scroll: WPFBannerViewBlock?) -> WPFBannerView {
+    static func bannerView(frame: CGRect, imageURLS: [String], titles: [String]?, placeholder: UIImage?, didSelect select: WPFBannerViewBlock?, didScroll scroll: WPFBannerViewBlock?) -> WPFBannerView {
         let bannerView = WPFBannerView(frame: frame)
         bannerView.staticInit(imageURLS: imageURLS, titles: titles, placeholder: placeholder)
         bannerView.didSelectItem = select
@@ -437,7 +437,7 @@ public extension WPFBannerView {
 }
 
 // MARK: - Extra Methods
-public extension WPFBannerView {
+extension WPFBannerView {
     fileprivate func initImageViews() {
         for urlStr in self.pImageURLs {
             var url: URL? = nil
@@ -606,14 +606,14 @@ public extension WPFBannerView {
 // MARK: - Delegate
 /// iCarouse Delegate
 extension WPFBannerView: iCarouselDataSource, iCarouselDelegate {
-    public func numberOfItems(in carousel: iCarousel) -> Int {
+    func numberOfItems(in carousel: iCarousel) -> Int {
         if self.pISOnlyText {
             return self.pTitles.count
         } else {
             return self.imageViews.count
         }
     }
-    public func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
+    func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         if self.pISOnlyText {
             return self.titleLabels[index]
         } else {
@@ -627,7 +627,7 @@ extension WPFBannerView: iCarouselDataSource, iCarouselDelegate {
             return iv
         }
     }
-    public func carousel(_ carousel: iCarousel, valueFor option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {
+    func carousel(_ carousel: iCarousel, valueFor option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {
         switch option {
         case .wrap:
             if self.pISLoop {
@@ -640,7 +640,7 @@ extension WPFBannerView: iCarouselDataSource, iCarouselDelegate {
         }
     }
     
-    public func carousel(_ carousel: iCarousel, didSelectItemAt index: Int) {
+    func carousel(_ carousel: iCarousel, didSelectItemAt index: Int) {
         if self.delegate != nil {
             self.delegate!.bannerView!(self, didSelectItemAt: index)
         }
@@ -649,7 +649,7 @@ extension WPFBannerView: iCarouselDataSource, iCarouselDelegate {
         }
     }
     
-    public func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
+    func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
         if self.pageControl != nil {
             switch self.pPageControlStyle {
             case .system:
